@@ -19,7 +19,7 @@ export function* validateToken() {
 		// TODO: On your created project, remove the next two lines to make this task function correctly.
 		return yield put(SESSION_FETCH_SUCCESS({ token: 'some-token' }));
 		// noinspection UnreachableCodeJS
-		const { session: { token: urlToken } } = store.getState();
+		const { session: { token: urlToken } } = store.getState();  // eslint-disable-line
 		let token = urlToken || cookie.get('authToken');
 		refreshSessionToken(token);
 		removeQueryParams('authToken');

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { parse } from 'query-string';
-import { Link, withRouter, Route } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
-import { ROUTES, PARAMETRIZED_ROUTES } from 'routes';
+import { ROUTES } from 'routes';
 import { SESSION_FETCH_REQUEST } from './session-actions';
 import { SESSION_STATE } from './session-reducer';
-import { parametrizePath } from 'utils/transition';
 
-import ParametrizedView from 'components/ParametrizedView';
+import PrimaryLayout from 'views/PrimaryLayout';
 
 import css from './styles.module.css';
 
@@ -31,14 +30,7 @@ export class component extends Component<Props> {
 			case SESSION_STATE.AUTHENTICATED:
 				return (
 					<div className={css['routes-wrapper']}>
-						<Route path={ROUTES.BASE} render={() => (
-							<div>
-								<h1>{t('hello-world')}</h1>
-								<Link exact to={parametrizePath(PARAMETRIZED_ROUTES.ITEM, 1)}>{t('visit-path')}</Link>
-							</div>
-						)}/>
-						<Route path={ROUTES.ITEMS} render={(props) => <ParametrizedView {...props} />}/>
-						<Route path={PARAMETRIZED_ROUTES.ITEM} render={(props) => <ParametrizedView {...props} />}/>
+						<Route path={ROUTES.BASE} render={() => <PrimaryLayout />}/>
 					</div>
 				);
 			case SESSION_STATE.AUTH_FAILED:
