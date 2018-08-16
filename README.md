@@ -40,6 +40,7 @@ brew install watchman # https://github.com/facebook/create-react-app/issues/3006
 
 > Note: In `WebStorm`, mark `./src` as Resources Root. _(Rt. click > Mark directory as > Resources root)_
 
+> Note: A `pre-commit` hooks runs before every commit to ensure that any specified linters work as intended. The hooks are defined in `.githooks`.
 ### File layout plan [.js]
 ```
 Library imports
