@@ -3,7 +3,32 @@
 
 .container {
 	@include expanded;
-	@include centered;
-	background-color: $greyish-two;
+	display: flex;
+	background-color: $white-three;
 	color: $black-two;
+}
+
+.sidebar-header {
+	padding: $grid-base-3x;
+	font-size: $font-title;
+	line-height: 48px;
+	letter-spacing: 1.5px;
+}
+
+.list {
+	flex-shrink: 0;
+	overflow-y: auto;
+	background: $gradient-orangeish-flipped;
+	color: $white-eight;
+}
+
+.component-list-container {
+	flex: 8;
+}
+
+.component-documentation-wrapper {
+	display: flex;
+	border-bottom: 1px dotted $black--40;
+	margin: $grid-base;
+	padding: $grid-base-6x $grid-base-2x $grid-base-3x;
 }

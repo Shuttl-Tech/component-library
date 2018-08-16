@@ -1,0 +1,11 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+.component-container {
+	display: flex;
+}
+
+.preview {
+	flex-basis: 50%;
+	flex-shrink: 0;
+}

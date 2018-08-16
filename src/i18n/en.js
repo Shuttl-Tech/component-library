@@ -1,4 +1,6 @@
 const strings = {
+	"brand": "Shuttl",
+	"component-lib-sidebar-header": "Component Library",
 	"hello-world": "Hello World! Welcome to the Terrace!",
 	"welcome-to-view": "Welcome to view {{view}}",
 	"change-to-de": "Change to DE",

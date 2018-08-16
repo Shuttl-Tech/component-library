@@ -13,6 +13,7 @@ $font-small-1:  12px;
 $font-standard: 14px;
 $font-normal-1: 16px;
 $font-normal-2: 18px;
+$font-title: $font-normal-1 * 2;
 
 // Border Properties
 $border-radius-standard: 4px;
@@ -33,10 +34,11 @@ $teal-blue-30: 				rgba(4, 151, 159, 0.3);
 
 $faded-pink: 					rgb(242, 224, 226);
 $light-mustard: 			rgb(250, 217, 97);
-$butterscotch: 				rgb(250, 182, 80);
-$mango: 							rgb(252, 157, 34);
-$light-orange: 				rgb(248, 165, 64);
 $mango-two: 					rgb(255, 191, 50);
+$butterscotch: 				rgb(250, 182, 80);
+$orange-butterscotch:	rgb(251, 150, 60);
+$light-orange: 				rgb(248, 165, 64);
+$mango: 							rgb(252, 157, 34);
 $orangeish-30: 				rgba(250, 152, 61, 0.3);
 $pumpkin-orange: 			rgb(250, 117, 40);
 $watermelon: 					rgb(246, 70, 90);
@@ -80,6 +82,13 @@ $black--31: 					rgba(0, 0, 0, 0.31);
 $black--5: 						rgba(0, 0, 0, 0.05);
 $black: 							rgb(0, 0, 0);
 $black--70: 					rgba(0, 0, 0, 0.7);
+
+// Shadows
+$box-shadow-butterscotch: 0 4px 10px 0 rgba(248, 165, 64, 0.5);
+
+// Gradients
+$gradient-orangeish: linear-gradient(285deg, $pumpkin-orange, $butterscotch);
+$gradient-orangeish-flipped: linear-gradient(115deg, $pumpkin-orange, $butterscotch);
 
 /* Text styles */
 .Text-Style-21 {

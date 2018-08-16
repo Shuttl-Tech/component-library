@@ -1,0 +1,17 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+.list-content {
+	padding: $grid-base-3x;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	transition: background-color $animation-standard;
+	text-decoration: none;
+	font-size: $font-normal-2;
+	color: $white;
+
+	&:hover {
+		background-color: $black--10;
+	}
+}

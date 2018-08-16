@@ -28,4 +28,5 @@ src/App.css
 
 .idea/workspace.xml
 .idea/dictionaries/*
+.idea/inspectionProfiles
 bin/_index.generated.js

@@ -1,0 +1,43 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+$arrow-size: 10px;
+.tooltip {
+	width: 220px;
+	height: 59.8px;
+	background-image: $gradient-orangeish;
+	box-shadow: $box-shadow-butterscotch;
+	border-radius: $grid-base;
+	font-size: $font-standard;
+	letter-spacing: 0.5px;
+	color: $white;
+	font-weight: 300;
+	position: relative;
+	z-index: 100;
+
+	@include centered;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -($arrow-size / 2);
+		left: 50%;
+		z-index: 99;
+		width: 0;
+		height: 0;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid $orange-butterscotch;
+		border-left: 5px solid transparent;
+	}
+
+	&.tooltip--left::after {
+		left: calc(0% + 5px);
+		border-bottom: 5px solid $butterscotch;
+	}
+
+	&.tooltip--right::after {
+		left: unset;
+		right: calc(0% + 5px);
+		border-bottom: 5px solid $pumpkin-orange;
+	}
+}

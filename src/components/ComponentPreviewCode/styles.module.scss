@@ -1,0 +1,14 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+.code {
+	flex-basis: 50%;
+	flex-shrink: 0;
+	position: relative;
+
+	pre {
+		margin-top: 0 !important;
+		height: 100%;
+		box-sizing: border-box;
+	}
+}
