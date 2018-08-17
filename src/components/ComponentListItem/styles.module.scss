@@ -2,7 +2,7 @@
 @import 'globals/_mixins';
 
 .list-content {
-	padding: $grid-base-3x;
+	padding: $grid-base-3x $grid-base-3x $grid-base-3x $grid-base-4x;
 	display: inline-block;
 	box-sizing: border-box;
 	width: 100%;
@@ -10,8 +10,18 @@
 	text-decoration: none;
 	font-size: $font-normal-2;
 	color: $white;
+	position: relative;
 
 	&:hover {
 		background-color: $black--10;
 	}
+}
+
+.color-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: $grid-base-2x;
+	height: 100%;
+	opacity: 0.7;
 }

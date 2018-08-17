@@ -1,0 +1,34 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+.container {
+	height: 300px;
+
+	&.fully-collapsible {
+		height: auto;
+	}
+}
+
+.body.collapsed-fully {
+	height: 0;
+	max-height: 0;
+	overflow: hidden;
+}
+
+.expanded {
+	height: auto;
+}
+
+.expanded-partially {
+	height: auto;
+	max-height: 700px;
+	overflow: auto !important;
+}
+
+.body {
+	overflow: hidden;
+}
+
+.footer-no-border {
+	border-top: 0;
+}

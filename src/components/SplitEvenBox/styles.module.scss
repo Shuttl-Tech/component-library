@@ -1,0 +1,26 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+.container {
+	height: 80px;
+}
+
+.segment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	@include expanded;
+}
+
+.horizontal .segment:not(:first-of-type) {
+	border-left: 1px transparentize($warm-grey-three, 0.7) solid;
+}
+
+.vertical {
+	flex-direction: column;
+
+	.segment:not(:first-of-type) {
+		border-top: 1px transparentize($warm-grey-three, 0.7) solid;
+	}
+}

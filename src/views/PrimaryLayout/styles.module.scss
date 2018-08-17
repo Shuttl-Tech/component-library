@@ -6,6 +6,7 @@
 	display: flex;
 	background-color: $white-three;
 	color: $black-two;
+	overflow: hidden;
 }
 
 .sidebar-header {
@@ -16,19 +17,40 @@
 }
 
 .list {
-	flex-shrink: 0;
 	overflow-y: auto;
 	background: $gradient-orangeish-flipped;
 	color: $white-eight;
+	width: 25vw;
+	flex-shrink: 0;
+	padding-bottom: 50px;
+}
+
+.component-preview-list-wrapper {
+	max-height: 100vh;
+	overflow: auto;
+	display: flex;
+	flex-grow: 1;
 }
 
 .component-list-container {
-	flex: 8;
+	flex-grow: 1;
+	overflow: auto;
+	border-spacing: 0;
+
+	td {
+		padding: 0;
+	}
 }
 
-.component-documentation-wrapper {
-	display: flex;
-	border-bottom: 1px dotted $black--40;
-	margin: $grid-base;
-	padding: $grid-base-6x $grid-base-2x $grid-base-3x;
+@keyframes fade-in-out {
+	0% { background-color: transparentize($pumpkin-orange, 1); }
+	20% { background-color: transparentize($pumpkin-orange, 0.6); }
+	80% { background-color: transparentize($pumpkin-orange, 0.6); }
+	100% { background-color: transparentize($pumpkin-orange, 1); }
+}
+
+.active {
+	animation-name: fade-in-out;
+	animation-duration: $animation-standard * 6;
+	animation-iteration-count: infinite;
 }

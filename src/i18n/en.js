@@ -12,6 +12,7 @@ const strings = {
 	"view-data-loaded": "View Data is successfully loaded.",
 	"view-data-pending": "View Data is being loaded.",
 	"view-data-failed": "View Data failed to load.",
+	"show-more": "Show More"
 };
 
 export default strings;

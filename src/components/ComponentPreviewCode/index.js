@@ -8,8 +8,6 @@ import css from './styles.module.css';
 
 export class ComponentPreviewCode extends Component {
 	render() {
-		const { t, i18n } = this.props;
-
 		return (
 			<div className={css.code}>
 				<SyntaxHighlighter language='jsx' style={style}>{this.props.code}</SyntaxHighlighter>

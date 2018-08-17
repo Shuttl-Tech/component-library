@@ -1,0 +1,28 @@
+@import 'globals/_variables';
+@import 'globals/_mixins';
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.box-module {
+	display: flex;
+	width: 100%;
+}
+
+.header {
+	border-bottom: 1px solid transparentize($warm-grey-three, 0.8);
+	flex-shrink: 0;
+}
+
+.body {
+	flex-grow: 1;
+	flex-shrink: 1;
+	overflow: hidden;
+}
+
+.footer {
+	border-top: 1px solid transparentize($warm-grey-three, 0.8);
+	flex-shrink: 0;
+}

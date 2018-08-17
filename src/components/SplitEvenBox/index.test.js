@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { Tooltip } from '../../../../src/index';
+import { SplitEvenBox } from '../../../../src/index';
 
-it('Tooltip tree looks like how it should', () => {
+it('SplitEvenBox tree looks like how it should', () => {
 	let props = {
 		match: {
 			params: {
@@ -12,7 +12,7 @@ it('Tooltip tree looks like how it should', () => {
 		}
 	};
 
-	const component = renderer.create(<Tooltip {...props} />);
+	const component = renderer.create(<SplitEvenBox {...props} />);
 	let tree = component.toJSON();
 	expect(tree).toMatchSnapshot();
 });

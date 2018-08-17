@@ -5,8 +5,7 @@ import css from './styles.module.css';
 
 export class ComponentPreviewVisual extends Component {
 	render() {
-		const { t, i18n,
-			id } = this.props;
+		const { id } = this.props;
 
 		return (
 			<div className={css.preview} id={id}>

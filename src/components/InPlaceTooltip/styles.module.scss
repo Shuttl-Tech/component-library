@@ -3,8 +3,10 @@
 
 $arrow-size: 10px;
 .tooltip {
+	text-align: center;
 	width: 220px;
-	height: 59.8px;
+	height: 30px;
+	padding: $grid-base-3x;
 	background-image: $gradient-orangeish;
 	box-shadow: $box-shadow-butterscotch;
 	border-radius: $grid-base;

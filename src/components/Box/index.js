@@ -5,7 +5,7 @@ import css from './styles.module.css';
 
 export class Box extends Component {
 	render() {
-		return <div className={cls(css['box'], 'component--box')}>{this.props.children}</div>;
+		return <div className={cls(css['box'], 'component--box', this.props.className)}>{this.props.children}</div>;
 	}
 }
 

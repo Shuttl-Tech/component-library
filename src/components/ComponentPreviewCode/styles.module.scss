@@ -2,13 +2,13 @@
 @import 'globals/_mixins';
 
 .code {
-	flex-basis: 50%;
-	flex-shrink: 0;
 	position: relative;
+	@include expanded;
 
 	pre {
-		margin-top: 0 !important;
-		height: 100%;
+		margin: 0 !important;
+		padding-top: 28px !important;
 		box-sizing: border-box;
+		@include expanded;
 	}
 }
