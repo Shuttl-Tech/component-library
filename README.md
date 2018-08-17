@@ -1,5 +1,5 @@
 # Component-Library
-![image](https://i.snag.gy/6ZVRm9.jpg)
+![image](https://snag.gy/zHEiy0.jpg)
 
 >**Work In Progress**
 
