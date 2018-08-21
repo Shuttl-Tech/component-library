@@ -12,12 +12,23 @@
 		"start-js": "react-scripts start",
 		"start": "npm-run-all -p watch-css start-js",
 		"build-js": "react-scripts build",
-		"build": "npm-run-all build-css build-js"
+		"build": "npm-run-all build-css build-js",
+		"build-package": "[[ -z $(hash webpack) ]] && webpack --mode='development' --progress --config ./src/webpack.package.config.js"
 	},
 	"devDependencies": {
 		"axios": "^0.18.0",
+		"babel-core": "^6.26.3",
 		"babel-eslint": "^8.2.6",
+		"babel-loader": "^7.1.5",
+		"babel-plugin-react-css-modules": "^3.4.2",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-2": "^6.24.1",
 		"classnames": "^2.2.6",
+		"css-loader": "^1.0.0",
 		"custom-react-scripts": "^0.2.2",
 		"enzyme": "^3.3.0",
 		"enzyme-adapter-react-16": "^1.1.1",
@@ -28,6 +39,7 @@
 		"eslint-plugin-jsx-a11y": "^5.1.1",
 		"eslint-plugin-react": "^7.11.1",
 		"flow-bin": "^0.75.0",
+		"html-webpack-plugin": "^3.2.0",
 		"http-status-codes": "^1.3.0",
 		"i18next": "^11.5.0",
 		"i18next-browser-languagedetector": "^2.2.3",
@@ -57,9 +69,13 @@
 		"redux-immutable-state-invariant": "^2.1.0",
 		"redux-saga": "^0.16.0",
 		"storage.io": "^1.2.0",
-		"voca": "^1.4.0"
+		"style-loader": "^0.22.1",
+		"voca": "^1.4.0",
+		"webpack": "^4.17.0",
+		"webpack-cli": "^3.1.0",
+		"webpack-dev-server": "^3.1.5"
 	},
 	"description": "A `create-react-app` based frontend starter project, using `custom-react-scripts`.",
-	"main": "build/index.html",
+	"main": "./src/index.package.generated.js",
 	"license": "MIT"
 }
