@@ -25,6 +25,7 @@ src/components/**/*.css
 src/views/**/*.css
 bin/generators/**/*.css
 src/App.css
+src/index.css
 
 .idea/workspace.xml
 .idea/dictionaries/*
