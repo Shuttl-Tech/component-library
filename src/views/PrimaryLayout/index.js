@@ -25,7 +25,7 @@ type Props = {
 
 const t = (...args) => i18n.t(...args);
 
-const dummyData = ({ count = 4, units = 'words' } = {}) => {
+export const dummyData = ({ count = 4, units = 'words' } = {}) => {
 	return loremIpsum({ count, units });
 };
 
@@ -39,7 +39,7 @@ const segmentText2 = dummyData({ count: 1 });
 const segmentText3 = dummyData({ count: 3 });
 const segmentText4 = dummyData({ count: 2 });
 
-const COMPONENTS = [
+export const COMPONENTS = [
 	{
 		name: "Box",
 		component: <Box>{dummyData1}</Box>,
@@ -139,13 +139,13 @@ const COMPONENTS = [
 });
 
 function componentsSidebarList (t) {
-	let sidebarListItems = COMPONENTS.map(({name, stringName, color}) => {
+	let sidebarListItems = COMPONENTS.map(({name, stringName, color}, i) => {
 		let id = v.snakeCase(stringName);
 		let hash = '#' + id;
 		let activeClassObject = {};
 		activeClassObject[css.active] = window.location.hash === hash;
 
-		return <ComponentListItem name={name} stringName={stringName} color={color} className={activeClassObject}/>
+		return <ComponentListItem key={i} name={name} stringName={stringName} color={color} className={activeClassObject}/>
 	});
 	return (
 		<div className={css.list} >
@@ -159,14 +159,14 @@ function componentsSidebarList (t) {
 }
 
 function componentsPreviewList () {
-	let previewListItems = COMPONENTS.map(({component, code, name, stringName}) => {
+	let previewListItems = COMPONENTS.map(({component, code, name, stringName}, i) => {
 		let id = v.snakeCase(stringName);
 		let hash = '#' + id;
 		let activeClassObject = {};
 		activeClassObject[css.active] = window.location.hash === hash;
 
 		return (
-			<tr className={cls(css['component-documentation-wrapper'], activeClassObject )}>
+			<tr key={i} className={cls(css['component-documentation-wrapper'], activeClassObject )}>
 				<td><ComponentPreviewVisual id={id} component={component}/></td>
 				<td><ComponentPreviewCode code={code}/></td>
 			</tr>

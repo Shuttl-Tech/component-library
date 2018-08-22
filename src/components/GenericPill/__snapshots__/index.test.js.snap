@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenericPill tree looks like how it should 1`] = `
+<div
+  className="pill-wrapper pill-wrapper--yellow component--pill-wrapper component--pill-wrapper--yellow"
+>
+  <span
+    className="pill-text component--pill-text"
+  />
+</div>
+`;

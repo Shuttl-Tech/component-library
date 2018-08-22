@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComponentPreviewCode tree looks like how it should 1`] = `
+<div
+  className="code"
+>
+  <pre
+    style={
+      Object {
+        "MozHyphens": "none",
+        "MozTabSize": "4",
+        "OTabSize": "4",
+        "WebkitHyphens": "none",
+        "background": "#2a2734",
+        "color": "#9a86fd",
+        "direction": "ltr",
+        "fontFamily": "Consolas, Menlo, Monaco, \\"Andale Mono WT\\", \\"Andale Mono\\", \\"Lucida Console\\", \\"Lucida Sans Typewriter\\", \\"DejaVu Sans Mono\\", \\"Bitstream Vera Sans Mono\\", \\"Liberation Mono\\", \\"Nimbus Mono L\\", \\"Courier New\\", Courier, monospace",
+        "fontSize": "14px",
+        "hyphens": "none",
+        "lineHeight": "1.375",
+        "margin": ".5em 0",
+        "msHyphens": "none",
+        "overflow": "auto",
+        "padding": "1em",
+        "tabSize": "4",
+        "textAlign": "left",
+        "whiteSpace": "pre",
+        "wordBreak": "normal",
+        "wordSpacing": "normal",
+      }
+    }
+  >
+    <code
+      style={
+        Object {
+          "MozHyphens": "none",
+          "MozTabSize": "4",
+          "OTabSize": "4",
+          "WebkitHyphens": "none",
+          "background": "#2a2734",
+          "color": "#9a86fd",
+          "direction": "ltr",
+          "fontFamily": "Consolas, Menlo, Monaco, \\"Andale Mono WT\\", \\"Andale Mono\\", \\"Lucida Console\\", \\"Lucida Sans Typewriter\\", \\"DejaVu Sans Mono\\", \\"Bitstream Vera Sans Mono\\", \\"Liberation Mono\\", \\"Nimbus Mono L\\", \\"Courier New\\", Courier, monospace",
+          "fontSize": "14px",
+          "hyphens": "none",
+          "lineHeight": "1.375",
+          "msHyphens": "none",
+          "tabSize": "4",
+          "textAlign": "left",
+          "whiteSpace": "pre",
+          "wordBreak": "normal",
+          "wordSpacing": "normal",
+        }
+      }
+    />
+  </pre>
+</div>
+`;

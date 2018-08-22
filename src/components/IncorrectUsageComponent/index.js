@@ -6,7 +6,9 @@ import css from './styles.module.css'
 
 export class IncorrectUsageComponent extends PureComponent {
 	componentDidMount() {
-		console.warn('Incorrect usage for component.\nShuttl Component Library does not expose any components through a default export.', this.displayName, this);
+		if (process.env.NODE_ENV !== 'test') {
+			console.warn('Incorrect usage for component.\nShuttl Component Library does not expose any components through a default export.');
+		}
 	}
 
 	render () {

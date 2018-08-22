@@ -1,18 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { Tooltip } from './';
+import { InPlaceTooltip } from './';
+
+const tooltipText = 'Hello World!';
 
 it('InPlaceTooltip tree looks like how it should', () => {
 	let props = {
-		match: {
-			params: {
-				id: 1
-			}
-		}
+		position: 'left'
 	};
 
-	const component = renderer.create(<Tooltip {...props} />);
+	const component = renderer.create(<InPlaceTooltip {...props}>{tooltipText}</InPlaceTooltip>);
 	let tree = component.toJSON();
 	expect(tree).toMatchSnapshot();
 });

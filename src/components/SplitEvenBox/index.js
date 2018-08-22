@@ -12,8 +12,8 @@ export class SplitEvenBox extends Component {
 		return (
 			<Box className={cls(css.container, direction ? css[direction] : css.horizontal, `component--split-even-box--container`, `component--split-even-box--container--${direction}`)}>
 				{
-					this.props.segments.map(segment => {
-						return <div className={cls(css.segment, 'component--split-even-box--segment')}>{segment}</div>;
+					this.props.segments.map((segment, i) => {
+						return <div key={i} className={cls(css.segment, 'component--split-even-box--segment')}>{segment}</div>;
 					})
 				}
 			</Box>

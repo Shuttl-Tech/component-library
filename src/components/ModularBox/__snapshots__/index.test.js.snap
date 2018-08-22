@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModularBox tree looks like how it should 1`] = `
+<div
+  className="box component--box container"
+>
+  
+  <div
+    className="body box-module component--modular-box--body component--modular-box--box-module"
+  />
+  
+</div>
+`;

@@ -1,3 +1,4 @@
 src/index.package.generated.js
 build
 docs
+**/*.snap

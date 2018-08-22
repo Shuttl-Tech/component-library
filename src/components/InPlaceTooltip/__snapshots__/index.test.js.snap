@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InPlaceTooltip tree looks like how it should 1`] = `
+<div
+  className="tooltip tooltip--left component--in-place-tooltip component--in-place-tooltip--left"
+>
+  Hello World!
+</div>
+`;

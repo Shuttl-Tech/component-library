@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncorrectUsageComponent tree looks like how it should 1`] = `
+<div
+  className="container"
+>
+  <div>
+    <div>
+      <span>
+        <h3
+          className="title"
+        >
+          Incorrect component usage.
+        </h3>
+        <small>
+          You tried to use a default export from the
+          <br />
+          <strong>
+            Shuttl Component Library
+          </strong>
+           as a component.
+        </small>
+      </span>
+      <hr />
+    </div>
+  </div>
+  <div>
+    <span>
+      Usage should be as follows:
+    </span>
+    <pre>
+      <code>
+        import { ComponentName } from 'component-library';
+      </code>
+      <br />
+      <code>
+        ...
+      </code>
+      <br />
+      <code>
+        &lt;ComponentName&gt;some content here&lt;/ComponentName&gt;
+      </code>
+    </pre>
+  </div>
+</div>
+`;

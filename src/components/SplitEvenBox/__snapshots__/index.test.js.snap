@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SplitEvenBox tree looks like how it should 1`] = `
+<div
+  className="box component--box container horizontal component--split-even-box--container component--split-even-box--container--undefined"
+>
+  <div
+    className="segment component--split-even-box--segment"
+  >
+    <span>
+      Micheal Faraday
+    </span>
+  </div>
+  <div
+    className="segment component--split-even-box--segment"
+  >
+    <span>
+      Tim Berners-Lee
+    </span>
+  </div>
+  <div
+    className="segment component--split-even-box--segment"
+  >
+    <span>
+      Marie Curie
+    </span>
+  </div>
+  <div
+    className="segment component--split-even-box--segment"
+  >
+    <span>
+      Louis Pasteur
+    </span>
+  </div>
+</div>
+`;

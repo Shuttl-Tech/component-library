@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapsibleBox tree looks like how it should 1`] = `
+<div
+  className="box component--box container container"
+>
+  
+  <div
+    className="body box-module component--modular-box--body component--modular-box--box-module body"
+  />
+  <div
+    className="footer box-module component--modular-box--footer component--modular-box--box-module"
+  >
+    <div
+      className="component--collapsible-box--footer"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
