@@ -5,9 +5,9 @@
 	display: inline-flex;
 	flex-direction: column;
 	border: 1px solid lightgray;
-	padding: 8px;
-	margin: 8px;
-	border-radius: 4px;
+	padding: $grid-base-2x;
+	margin: $grid-base-2x;
+	border-radius: $grid-base;
 	font-size: 0.9em;
 	background-color: $white-four;
 }
