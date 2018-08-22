@@ -13,7 +13,7 @@
 		"start": "npm-run-all -p watch-css start-js",
 		"build-js": "react-scripts build",
 		"build": "npm-run-all build-css build-js",
-		"docs": "yarn build && mv build docs",
+		"docs": "yarn build && rm -rf docs && mv build docs",
 		"package": "[[ -z $(hash webpack) ]] && yarn build-css && webpack --mode='development' --progress --config ./src/webpack.package.config.js && yarn docs"
 	},
 	"devDependencies": {
@@ -78,5 +78,6 @@
 	},
 	"description": "A `create-react-app` based frontend starter project, using `custom-react-scripts`.",
 	"main": "./src/index.package.generated.js",
-	"license": "MIT"
+	"license": "MIT",
+	"homepage": "https://shuttl-tech.github.io/component-library/"
 }
