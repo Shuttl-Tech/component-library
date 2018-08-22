@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { GenericPill } from '../../../../src/index';
+import { GenericPill } from './';
 
 it('GenericPill tree looks like how it should', () => {
 	let props = {

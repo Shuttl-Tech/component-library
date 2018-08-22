@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ComponentListItem } from '../../../../src/index';
+import { ComponentListItem } from './';
 
 it('ComponentListItem tree looks like how it should', () => {
 	let props = {

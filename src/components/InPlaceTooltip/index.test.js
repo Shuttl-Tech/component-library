@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { Tooltip } from '../../../../src/index';
+import { Tooltip } from './';
 
 it('InPlaceTooltip tree looks like how it should', () => {
 	let props = {

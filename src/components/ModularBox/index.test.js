@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ModularBox } from '../../../../src/index';
+import { ModularBox } from './';
 
 it('ModularBox tree looks like how it should', () => {
 	let props = {

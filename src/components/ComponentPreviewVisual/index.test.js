@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ComponentPreviewVisual } from '../../../../src/index';
+import { ComponentPreviewVisual } from './';
 
 it('ComponentPreviewVisual tree looks like how it should', () => {
 	let props = {

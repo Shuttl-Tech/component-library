@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { SplitEvenBox } from '../../../../src/index';
+import { SplitEvenBox } from './';
 
 it('SplitEvenBox tree looks like how it should', () => {
 	let props = {

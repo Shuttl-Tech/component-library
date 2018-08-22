@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { CollapsibleBox } from '../../../../src/index';
+import { CollapsibleBox } from './';
 
 it('CollapsibleBox tree looks like how it should', () => {
 	let props = {

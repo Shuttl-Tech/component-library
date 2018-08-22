@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ComponentPreviewCode } from '../../../../src/index';
+import { ComponentPreviewCode } from './';
 
 it('ComponentPreviewCode tree looks like how it should', () => {
 	let props = {

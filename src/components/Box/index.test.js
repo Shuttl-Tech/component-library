@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { Box } from '../../../../src/index';
+import { Box } from './';
 
 it('Box tree looks like how it should', () => {
 	let props = {
