@@ -1,9 +1,13 @@
-# Component-Library
+# Shuttl Component Library
 ![image](https://snag.gy/zHEiy0.jpg)
 
 >**Work In Progress**
 
 A repository for reusable components for the various projects built under the Shuttl organization.
+
+ℹ️ Components here **may** have a default style set, but if they do, default and namespaced classes should be assigned to each element in such components. As a convention, we're using the pattern `component--purpose-of-element(--additional-purpose)?(--variation)?`. See [this component file](https://github.com/Shuttl-Tech/component-library/blob/cb9db2192568c2f5e02a3550a8102a44711cab22/src/components/InPlaceTooltip/index.js) as an example.
+
+ℹ️ It is recommended for components to have a default style set, but not strongly as of this commit, since we still don't have a defined design language.
 
 ## Development Instructions
 #### To add a new component:
@@ -23,20 +27,23 @@ git push <your changes>
 
 > Usage of `terrace` is optional. You can create a component any other way.
 
+> Any needed changes to the webpack config go to `src/webpack.package.config.js`.
+
 ---
 
 #### To use in other projects:
 ```bash
-# shell
+# in the terminal
 yarn add -D Shuttl-Tech/component-library
 ```
 ```jsx
+// in the component file
 import { CollapsibleBox, InPlaceTooltip } from 'component-library';
 // ...
 <CollapsibleBox> some stuff here </CollapsibleBox>
 <InPlaceTooltip someProp={someVal}> some more stuff here </InPlaceTooltip>
 ```
-
+---
 
 # Terrace.js instructions
 A `create-react-app` based frontend starter project, using `custom-react-scripts`.
