@@ -1,18 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { GenericPill } from '../../../../src/index';
+import { IncorrectUsageComponent } from './';
 
-it('GenericPill tree looks like how it should', () => {
-	let props = {
-		match: {
-			params: {
-				id: 1
-			}
-		}
-	};
-
-	const component = renderer.create(<GenericPill {...props} />);
+it('IncorrectUsageComponent tree looks like how it should', () => {
+	const component = renderer.create(<IncorrectUsageComponent/>);
 	let tree = component.toJSON();
 	expect(tree).toMatchSnapshot();
 });
