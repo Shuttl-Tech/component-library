@@ -1,15 +1,8 @@
-import Box from './components/Box';
-import CollapsibleBox from './components/CollapsibleBox';
-import ModularBox from './components/ModularBox';
-import SplitEvenBox from './components/SplitEvenBox';
-import GenericPill from './components/GenericPill';
-import InPlaceTooltip from './components/InPlaceTooltip';
+export { Box } from 'components/Box';
+export { CollapsibleBox } from 'components/CollapsibleBox';
+export { ModularBox } from 'components/ModularBox';
+export { SplitEvenBox } from 'components/SplitEvenBox';
+export { GenericPill } from 'components/GenericPill';
+export { InPlaceTooltip } from 'components/InPlaceTooltip';
 
-export default {
-	Box,
-	CollapsibleBox,
-	ModularBox,
-	SplitEvenBox,
-	GenericPill,
-	InPlaceTooltip
-};
+export { default } from 'components/IncorrectUsageComponent';

@@ -5,7 +5,37 @@
 
 A repository for reusable components for the various projects built under the Shuttl organization.
 
+## Development Instructions
+#### To add a new component:
+```bash
+yarn global add terrace.js # if you don't have it installed
+terrace component component-name
 
+# in `src/index.package.js`
+# export your component from the respective path
+
+yarn package
+git commit <your changes>
+git push <your changes>
+```
+
+> You must have `Webpack` installed globally. We're using v4 in this project.
+
+> Usage of `terrace` is optional. You can create a component any other way.
+
+---
+
+#### To use in other projects:
+```bash
+# shell
+yarn add -D Shuttl-Tech/component-library
+```
+```jsx
+import { CollapsibleBox, InPlaceTooltip } from 'component-library';
+// ...
+<CollapsibleBox> some stuff here </CollapsibleBox>
+<InPlaceTooltip someProp={someVal}> some more stuff here </InPlaceTooltip>
+```
 
 
 # Terrace.js instructions
