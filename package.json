@@ -13,7 +13,8 @@
 		"start": "npm-run-all -p watch-css start-js",
 		"build-js": "react-scripts build",
 		"build": "npm-run-all build-css build-js",
-		"package": "[[ -z $(hash webpack) ]] && yarn build-css && webpack --mode='development' --progress --config ./src/webpack.package.config.js"
+		"docs": "yarn build && mv build docs",
+		"package": "[[ -z $(hash webpack) ]] && yarn build-css && webpack --mode='development' --progress --config ./src/webpack.package.config.js && yarn docs"
 	},
 	"devDependencies": {
 		"axios": "^0.18.0",
