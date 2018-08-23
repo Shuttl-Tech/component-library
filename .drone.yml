@@ -1,0 +1,10 @@
+pipeline:
+ build:
+  image: node:8.11.2
+  environment:
+   - CI=true
+  when:
+   branch: [master, devlop]
+  commands:
+   - yarn install
+   - yarn test
