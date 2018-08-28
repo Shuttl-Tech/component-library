@@ -4,11 +4,16 @@ import classNames from 'classnames';
 
 import css from './styles.module.css';
 
-export class GenericPill extends Component {
+type Props = {
+	className?: string,
+	color?: string
+}
+
+export class GenericPill extends Component<Props> {
 	render() {
-		let color = this.props.color || 'yellow';
+		let { color = 'yellow', className = '' } = this.props;
 		return (
-			<div className={classNames(css['pill-wrapper'], css[`pill-wrapper--${color}`], 'component--pill-wrapper', `component--pill-wrapper--${color}`)}>
+			<div className={classNames(css['pill-wrapper'], css[`pill-wrapper--${color}`], 'component--pill-wrapper', `component--pill-wrapper--${color}`, className)}>
 				<span className={classNames(css['pill-text'], 'component--pill-text')}>{this.props.children}</span>
 			</div>
 		)

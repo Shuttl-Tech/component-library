@@ -3,7 +3,11 @@ import cls from 'classnames';
 
 import css from './styles.module.css';
 
-export class Box extends Component {
+type Props = {
+	className?: string
+}
+
+export class Box extends Component<Props> {
 	render() {
 		return <div className={cls(css['box'], 'component--box', this.props.className)}>{this.props.children}</div>;
 	}

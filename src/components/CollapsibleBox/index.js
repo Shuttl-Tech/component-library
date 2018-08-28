@@ -6,7 +6,15 @@ import ModularBox from 'components/ModularBox';
 
 import css from './styles.module.css';
 
-export class CollapsibleBox extends Component {
+type Props = {
+	className?: string,
+	expanded?: string,
+	collapsed?: string,
+	header?: string,
+	footer?: string
+}
+
+export class CollapsibleBox extends Component<Props> {
 	constructor() {
 		super();
 

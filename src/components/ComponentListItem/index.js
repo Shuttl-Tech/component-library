@@ -5,14 +5,21 @@ import cls from 'classnames';
 
 import css from './styles.module.css';
 
-export class ComponentListItem extends Component {
+type Props = {
+	className?: string,
+	name: string,
+	stringName: string,
+	color?: string
+}
+
+export class ComponentListItem extends Component<Props> {
 	render() {
-		const { name, stringName, color } = this.props;
+		const { name, stringName, color = 'f00', className = '' } = this.props;
 		let id = '#' + v.snakeCase(stringName);
 		let backgroundColor = '#' + color;
 
 		return (
-			<a href={id} className={cls(css['list-content'], this.props.className)}>
+			<a href={id} className={cls(css['list-content'], className)}>
 				<span className={css['color-bar']} style={{ backgroundColor }} />
 				<div>{name}</div>
 			</a>

@@ -6,7 +6,11 @@ import { duotoneDark as style } from 'react-syntax-highlighter/styles/prism';
 
 import css from './styles.module.css';
 
-export class ComponentPreviewCode extends Component {
+type Props = {
+	code: string
+}
+
+export class ComponentPreviewCode extends Component<Props> {
 	render() {
 		return (
 			<div className={css.code}>

@@ -9,7 +9,7 @@ exports[`ComponentListItem tree looks like how it should 1`] = `
     className="color-bar"
     style={
       Object {
-        "backgroundColor": "#undefined",
+        "backgroundColor": "#f00",
       }
     }
   />

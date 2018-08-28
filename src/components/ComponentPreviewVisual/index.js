@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import cls from 'classnames';
 
 import css from './styles.module.css';
 
-export class ComponentPreviewVisual extends Component {
+type Props = {
+	className?: string,
+	id: string,
+	component: Component
+}
+
+export class ComponentPreviewVisual extends Component<Props> {
 	render() {
-		const { id } = this.props;
+		const { id, className, component } = this.props;
 
 		return (
-			<div className={css.preview} id={id}>
-				{this.props.component}
+			<div className={cls(css.preview, className)} id={id}>
+				{component}
 			</div>
 		)
 	}

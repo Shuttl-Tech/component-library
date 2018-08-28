@@ -2,7 +2,7 @@
 
 exports[`SplitEvenBox tree looks like how it should 1`] = `
 <div
-  className="box component--box container horizontal component--split-even-box--container component--split-even-box--container--undefined"
+  className="box component--box container horizontal component--split-even-box--container component--split-even-box--container--horizontal"
 >
   <div
     className="segment component--split-even-box--segment"

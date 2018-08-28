@@ -6,7 +6,16 @@ import Box from 'components/Box';
 
 import css from './styles.module.css';
 
-export class ModularBox extends Component {
+type Props = {
+	className?: string,
+	headerClassName?: string,
+	bodyClassName?: string,
+	footerClassName?: string,
+	header?: Component,
+	footer?: Component,
+}
+
+export class ModularBox extends Component<Props> {
 	render() {
 		let { header, children: body, footer, className, headerClassName, bodyClassName, footerClassName } = this.props;
 

@@ -2,7 +2,7 @@
 
 import React, { PureComponent } from 'react';
 
-import css from './styles.module.css'
+import css from './styles.module.css';
 
 export class IncorrectUsageComponent extends PureComponent {
 	componentDidMount() {
