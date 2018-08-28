@@ -19,11 +19,12 @@ $arrow-size: 10px;
 
 	@include centered;
 
-	&::after {
-		content: '';
+	.arrow {
 		position: absolute;
 		top: -($arrow-size / 2);
-		left: 50%;
+		left: 0;
+		right: 0;
+		margin: auto;
 		z-index: 99;
 		width: 0;
 		height: 0;
@@ -32,14 +33,14 @@ $arrow-size: 10px;
 		border-left: 5px solid transparent;
 	}
 
-	&.tooltip--left::after {
-		left: calc(0% + 5px);
+	&.tooltip--left .arrow {
+		left: calc(0% + #{$grid-base});
 		border-bottom: 5px solid $butterscotch;
 	}
 
-	&.tooltip--right::after {
+	&.tooltip--right .arrow {
 		left: unset;
-		right: calc(0% + 5px);
+		right: calc(0% + #{$grid-base});
 		border-bottom: 5px solid $pumpkin-orange;
 	}
 }
