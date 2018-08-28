@@ -9,17 +9,18 @@ type Props = {
 	className?: string,
 	name: string,
 	stringName: string,
-	color?: string
+	color?: string,
+	key: number
 }
 
 export class ComponentListItem extends Component<Props> {
 	render() {
-		const { name, stringName, color = 'f00', className = '' } = this.props;
+		const { name, stringName, color = 'f00', className = '', key } = this.props;
 		let id = '#' + v.snakeCase(stringName);
 		let backgroundColor = '#' + color;
 
 		return (
-			<a href={id} className={cls(css['list-content'], className)}>
+			<a href={id} key={key} className={cls(css['list-content'], className)}>
 				<span className={css['color-bar']} style={{ backgroundColor }} />
 				<div>{name}</div>
 			</a>
