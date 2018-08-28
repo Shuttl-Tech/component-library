@@ -10,7 +10,7 @@ type Props = {
 
 export class InPlaceTooltip extends Component<Props> {
 	render() {
-		let { position, className = '' } = this.props;
+		let { position = 'center', className = '' } = this.props;
 		return (
 			<div className={cls(css.tooltip, css[`tooltip--${position}`], 'component--in-place-tooltip', `component--in-place-tooltip--${position}`, className)}>
 				{this.props.children}
