@@ -47,6 +47,21 @@ export const COMPONENTS = [
 	},
 	{
 		name: "InPlaceTooltip",
+		component: <InPlaceTooltip>{dummyData1}</InPlaceTooltip>,
+		code: `<InPlaceTooltip>\n\t${dummyData1}\n</InPlaceTooltip>`
+	},
+	{
+		name: "InPlaceTooltip - Absolute",
+		component: <InPlaceTooltip position="absolute">{dummyData1}</InPlaceTooltip>,
+		code: `<InPlaceTooltip position="absolute">\n\t${dummyData1}\n</InPlaceTooltip>`
+	},
+	{
+		name: "InPlaceTooltip - Absolute + Value",
+		component: <InPlaceTooltip position="absolute" absoluteValue={60}>{dummyData1}</InPlaceTooltip>,
+		code: `<InPlaceTooltip position="absolute" absoluteValue={60}>\n\t${dummyData1}\n</InPlaceTooltip>`
+	},
+	{
+		name: "InPlaceTooltip - Center",
 		component: <InPlaceTooltip position="center">{dummyData1}</InPlaceTooltip>,
 		code: `<InPlaceTooltip position="center">\n\t${dummyData1}\n</InPlaceTooltip>`
 	},
@@ -145,7 +160,7 @@ function componentsSidebarList (t) {
 		let activeClassObject = {};
 		activeClassObject[css.active] = window.location.hash === hash;
 
-		return <ComponentListItem key={i} name={name} stringName={stringName} color={color} className={activeClassObject}/>
+		return <ComponentListItem key={i} name={name} stringName={stringName} color={color} className={cls(activeClassObject, css['component-list-item'])}/>
 	});
 	return (
 		<div className={css.list} >
