@@ -11,7 +11,10 @@ type Props = {
 	expanded?: string,
 	collapsed?: string,
 	header?: string,
-	footer?: string
+	footer?: string,
+	headerClassName?: string,
+	bodyClassName?: string,
+	footerClassName?: string
 }
 
 export class CollapsibleBox extends Component<Props> {
@@ -32,7 +35,7 @@ export class CollapsibleBox extends Component<Props> {
 		 * mode: fully | partially
 		 * collapsed: fully | partially
 		 */
-		let { header, children: body, footer, expanded = 'partially', collapsed = 'partially' } = this.props;
+		let { header, children: body, footer, expanded = 'partially', collapsed = 'partially', headerClassName, bodyClassName, footerClassName, className } = this.props;
 		let { isExpanded } = this.state;
 
 		footer = <div className={cls('component--collapsible-box--footer')} onClick={() => this.toggleExpansion()}>{footer}</div>;
@@ -46,11 +49,12 @@ export class CollapsibleBox extends Component<Props> {
 
 		return (
 			<ModularBox
-				className={cls(css.container, collapsed === 'fully' ? css['fully-collapsible'] : '', expansionStateClass)}
+				className={cls(css.container, collapsed === 'fully' ? css['fully-collapsible'] : '', expansionStateClass, className)}
 				header={header}
 				footer={footer}
-				bodyClassName={cls(css.body, expansionStateClass)}
-				footerClassName={cls(collapsed === 'fully' && !isExpanded ? css['footer-no-border'] : '')}
+				headerClassName={headerClassName}
+				bodyClassName={cls(css.body, expansionStateClass, bodyClassName)}
+				footerClassName={cls(collapsed === 'fully' && !isExpanded ? css['footer-no-border'] : '', footerClassName)}
 			>
 				{body}
 			</ModularBox>
