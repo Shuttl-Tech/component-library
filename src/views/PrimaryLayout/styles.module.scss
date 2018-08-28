@@ -25,6 +25,28 @@
 	padding-bottom: 50px;
 }
 
+@keyframes list-item-fade-in {
+	0% { opacity: 0; transform: translateX(-($grid-base * 10)); }
+	100% { opacity: 1; transform: translateX(0); }
+}
+
+$list-item-shift: -($grid-base * 10);
+$list-item-animation-duration: $animation-standard * 2;
+$animation-delay-increment: $list-item-animation-duration / 8;
+$component-count: 100;
+
+.component-list-item {
+	opacity: 0;
+	transform: translateX($list-item-shift);
+	animation: list-item-fade-in $list-item-animation-duration ease-out forwards;
+}
+
+@for $i from 1 through $component-count {
+	.component-list-item:nth-of-type(#{$i}){
+		animation-delay: $i * $animation-delay-increment;
+	}
+}
+
 .component-preview-list-wrapper {
 	max-height: 100vh;
 	overflow: auto;
@@ -50,7 +72,5 @@
 }
 
 .active {
-	animation-name: fade-in-out;
-	animation-duration: $animation-standard * 6;
-	animation-iteration-count: infinite;
+	animation: list-item-fade-in $list-item-animation-duration ease-out forwards, fade-in-out ($animation-standard * 6) infinite;
 }
