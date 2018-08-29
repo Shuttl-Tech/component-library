@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const { titleCase } = require('voca');
+require('colors');
 
 const UPGRADE_MODE = { PATCH: 'patch',
 	MINOR: 'minor',
@@ -27,4 +28,20 @@ file = JSON.stringify({ ...file, version }, null, '\t') + '\n';
 
 fs.writeFileSync('./package.json', file);
 
-console.log(`${titleCase(UPGRADE)} upgrade from version ${oldVersion} to ${version} 🎉`);
+let message = ` ⏫ ${titleCase(UPGRADE)} upgrade from version ${oldVersion} to ${version} 🎉 `;
+let BOX = {
+	TOP_LEFT: '╭',
+	TOP_RIGHT: '╮',
+	BOTTOM_LEFT: '╰',
+	BOTTOM_RIGHT: '╯',
+	TOP: '─', BOTTOM: '─', LEFT: '│', RIGHT: '│',
+	PAD_X: 1
+};
+
+let length = message.length + 1;
+let HORIZONTAL = Array(length).fill(BOX.TOP).join('');
+
+console.log(`${BOX.TOP_LEFT}${HORIZONTAL}${BOX.TOP_RIGHT}`.green);
+console.log(`${BOX.LEFT.green}${message}${BOX.RIGHT.green}`);
+console.log(`${BOX.BOTTOM_LEFT}${HORIZONTAL}${BOX.BOTTOM_RIGHT}`.green);
+
