@@ -32,8 +32,18 @@ export class CollapsibleBox extends Component<Props> {
 
 	render() {
 		/**
-		 * mode: fully | partially
+		 * expanded: fully | partially
 		 * collapsed: fully | partially
+		 *
+		 * component states:
+		 * 1. fully expanded - `expanded` - body at full content height
+		 * 2. partially expanded - `expanded-partially` - body at limited content height, content is scrollable
+		 * 3. fully collapsed - `collapsed` - body not visible
+		 * 4. partially collapsed - no classname - body at limited content height, content is scrollable
+		 *
+		 * Note:
+		 * The partially collapsed state is useful when the expansion state toggles between partially expanded and fully expanded.
+		 * Since the component must have two states, expanded and collapsed, it's useful to have a partially-collapsed to fully-expanded state.
 		 */
 		let { header, children: body, footer, expanded = 'partially', collapsed = 'partially', headerClassName, bodyClassName, footerClassName, className } = this.props;
 		let { isExpanded } = this.state;
@@ -47,8 +57,15 @@ export class CollapsibleBox extends Component<Props> {
 			if (expanded === 'fully') expansionStateClass = cls(css.expanded, 'component--collapsible-box--container--expanded'); // then add the expanded class
 			else if (expanded === 'partially') expansionStateClass = cls(css['expanded-partially'], 'component--collapsible-box--container--expanded-partially'); // then add the expanded partially class.
 		}
-		else if (collapsed === 'fully') expansionStateClass = cls(css[ 'collapsed-fully' ], 'component--collapsible-box--container--collapsed-fully');
+		// if component state says it's not expanded
+		else {
+			// if component prop says it can be fully collapsed
+			if (collapsed === 'fully') expansionStateClass = cls(css.collapsed, 'component--collapsible-box--container--collapsed'); // make it fully collapsed
+			else if (collapsed === 'partially') expansionStateClass = cls(css['collapsed-partially'], 'component--collapsible-box--container--collapsed-partially'); // make it fully collapsed
+			// NOTE: The `collapsed-partially` class hasn't been defined as of now. [29 Aug, 18 - 1200 hrs]
+		}
 
+		// if component prop says it can be fully collapsed, add the fully-collapsible class
 		let fullyCollapsibleClass = collapsed === 'fully' ? cls(css['fully-collapsible'], 'component--collapsible-box--container--fully-collapsible') : '';
 
 		return (

@@ -2,11 +2,11 @@
 
 exports[`CollapsibleBox tree looks like how it should 1`] = `
 <div
-  className="box component--box container container"
+  className="box component--box container container collapsed-partially component--collapsible-box--container--collapsed-partially"
 >
   
   <div
-    className="body box-module component--modular-box--body component--modular-box--box-module body"
+    className="body box-module component--modular-box--body component--modular-box--box-module body collapsed-partially component--collapsible-box--container--collapsed-partially component--collapsible-box--body"
   />
   <div
     className="footer box-module component--modular-box--footer component--modular-box--box-module"

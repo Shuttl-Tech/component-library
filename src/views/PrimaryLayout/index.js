@@ -160,7 +160,7 @@ function componentsSidebarList (t) {
 		let activeClassObject = {};
 		activeClassObject[css.active] = window.location.hash === hash;
 
-		return <ComponentListItem key={i} name={name} stringName={stringName} color={color} className={cls(activeClassObject, css['component-list-item'])}/>
+		return <ComponentListItem key={i} name={name} stringName={stringName} color={color} className={cls(activeClassObject)}/>
 	});
 	return (
 		<div className={css.list} >
