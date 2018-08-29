@@ -14,7 +14,10 @@ type Props = {
 	footer?: string,
 	headerClassName?: string,
 	bodyClassName?: string,
-	footerClassName?: string
+	footerClassName?: string,
+	onClick?: Function,
+	onOpen?: Function,
+	onClose?: Function
 }
 
 export class CollapsibleBox extends Component<Props> {
@@ -26,8 +29,15 @@ export class CollapsibleBox extends Component<Props> {
 		}
 	}
 
-	toggleExpansion() {
-		this.setState({ isExpanded: !this.state.isExpanded });
+	toggleExpansion(...args) {
+		let { onOpen = () => {}, onClose = () => {} } = this.props;
+		let { isExpanded } = this.state;
+		isExpanded = !isExpanded;
+
+		this.setState({ isExpanded });
+
+		if (isExpanded) onOpen(...args);
+		else onClose(...args);
 	}
 
 	render() {
@@ -45,10 +55,10 @@ export class CollapsibleBox extends Component<Props> {
 		 * The partially collapsed state is useful when the expansion state toggles between partially expanded and fully expanded.
 		 * Since the component must have two states, expanded and collapsed, it's useful to have a partially-collapsed to fully-expanded state.
 		 */
-		let { header, children: body, footer, expanded = 'partially', collapsed = 'partially', headerClassName, bodyClassName, footerClassName, className } = this.props;
+		let { header, children: body, footer, expanded = 'partially', collapsed = 'partially', headerClassName, bodyClassName, footerClassName, className, onClick = () => {} } = this.props;
 		let { isExpanded } = this.state;
 
-		footer = <div className={cls('component--collapsible-box--footer')} onClick={() => this.toggleExpansion()}>{footer}</div>;
+		footer = <div className={cls('component--collapsible-box--footer')} onClick={(...args) => this.toggleExpansion(...args)}>{footer}</div>;
 
 		let expansionStateClass;
 		// if component state says it's expanded
@@ -88,6 +98,7 @@ export class CollapsibleBox extends Component<Props> {
 				headerClassName={cls(headerClassName, 'component--collapsible-box--header')}
 				bodyClassName={cls(css.body, bodyClassName, 'component--collapsible-box--body')}
 				footerClassName={cls(collapsed === 'fully' && !isExpanded ? css['footer-no-border'] : '', footerClassName)}
+				onClick={onClick}
 			>
 				{body}
 			</ModularBox>

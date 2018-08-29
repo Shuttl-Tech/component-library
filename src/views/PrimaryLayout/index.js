@@ -46,6 +46,11 @@ export const COMPONENTS = [
 		code: `<Box>\n\t${dummyData1}\n</Box>`
 	},
 	{
+		name: "Box - Events: onClick",
+		component: <Box onClick={(...args) => { alert('Box clicked!'); console.log(...args); }}>{dummyData1}</Box>,
+		code: `<Box\n\tonClick={(...args) => { alert('Box clicked!'); console.log(...args); }}\n>\n\t${dummyData1}\n</Box>`
+	},
+	{
 		name: "InPlaceTooltip",
 		component: <InPlaceTooltip>{dummyData1}</InPlaceTooltip>,
 		code: `<InPlaceTooltip>\n\t${dummyData1}\n</InPlaceTooltip>`
@@ -140,6 +145,15 @@ export const COMPONENTS = [
 		component: <CollapsibleBox collapsed='fully' header={<strong>{dummyData1}</strong>} footer={<strong>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
 		code: `<CollapsibleBox\n\tcollapsed='fully'\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
 	},
+	{
+		name: "CollapsibleBox - Partially Expandable - Body + Footer - Events: onOpen, onClose",
+		component: <CollapsibleBox
+			footer={<strong>{t('show-more')}</strong>}
+			onOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}
+			onClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}
+		>{dummyData3}</CollapsibleBox>,
+		code: `<CollapsibleBox\n\tfooter={<strong>${t('show-more')}</strong>}\n\tonOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}\n\tonClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}\n>\n\t${dummyData3}\n</CollapsibleBox>`
+	}
 ].map(component => {
 	component.stringName = component.name;
 	let splitName = component.name.split('-').map(n => n.trim());
