@@ -10,4 +10,4 @@ const options = {
 };
 
 spawnSync('git', ['add', '.'], options);
-spawnSync('git', ['commit', '-m', `Build version ${version}.`], options);
+spawnSync('git', ['commit', '-m', `Build version ${version}.`, '--no-verify'], options);
