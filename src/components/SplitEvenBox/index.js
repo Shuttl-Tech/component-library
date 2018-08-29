@@ -8,14 +8,18 @@ import css from './styles.module.css';
 
 type Props = {
 	className?: string,
-	direction?: string
+	direction?: string,
+	onClick?: Function
 }
 
 export class SplitEvenBox extends Component<Props> {
 	render() {
-		let { direction = 'horizontal', className } = this.props; // vertical | horizontal
+		let { direction = 'horizontal', className, onClick = () => {} } = this.props; // vertical | horizontal
 		return (
-			<Box className={cls(css.container, direction ? css[direction] : css.horizontal, `component--split-even-box--container`, `component--split-even-box--container--${direction}`, className)}>
+			<Box
+				className={cls(css.container, direction ? css[direction] : css.horizontal, `component--split-even-box--container`, `component--split-even-box--container--${direction}`, className)}
+				onClick={onClick}
+			>
 				{
 					this.props.segments.map((segment, i) => {
 						return <div key={i} className={cls(css.segment, 'component--split-even-box--segment')}>{segment}</div>;

@@ -111,6 +111,11 @@ export const COMPONENTS = [
 		code: `<ModularBox\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${dummyData2}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
 	},
 	{
+		name: "ModularBox - Body only - Events: onClick",
+		component: <ModularBox onClick={(...args) => { alert('Box clicked!'); console.log(...args); }}>{dummyData4}</ModularBox>,
+		code: `<ModularBox\n\t onClick={(...args) => { alert('Box clicked!'); console.log(...args); }}\n>\n\t${dummyData4}\n</ModularBox>`
+	},
+	{
 		name: "SplitEvenBox - 2 segments",
 		component: <SplitEvenBox segments={[<span>{segmentText1}</span>, <span>{segmentText2}</span>]} />,
 		code: `<SplitEvenBox segments={[<span>${segmentText1}</span>, <span>${segmentText2}</span>]} />`
@@ -124,6 +129,11 @@ export const COMPONENTS = [
 		name: "SplitEvenBox - Vertical - 2 segments",
 		component: <SplitEvenBox direction='vertical' segments={[<span>{segmentText1}</span>, <span>{segmentText2}</span>]} />,
 		code: `<SplitEvenBox direction='vertical' segments={[<span>${segmentText1}</span>, <span>${segmentText2}</span>]} />`
+	},
+	{
+		name: "SplitEvenBox - 2 segments - Events: onClick",
+		component: <SplitEvenBox onClick={(...args) => { alert('Box clicked!'); console.log(...args); }} segments={[<span>{segmentText1}</span>, <span>{segmentText2}</span>]} />,
+		code: `<SplitEvenBox\n\tonClick={(...args) => { alert('Box clicked!'); console.log(...args); }}\n\tsegments={[<span>${segmentText1}</span>, <span>${segmentText2}</span>]}\n/>`
 	},
 	{
 		name: "CollapsibleBox - Partially Expandable - Body + Footer",
@@ -146,13 +156,18 @@ export const COMPONENTS = [
 		code: `<CollapsibleBox\n\tcollapsed='fully'\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
 	},
 	{
-		name: "CollapsibleBox - Partially Expandable - Body + Footer - Events: onOpen, onClose",
+		name: "CollapsibleBox - Partially Expandable - Body + Footer - Events: onOpen, onClose, onClick",
 		component: <CollapsibleBox
 			footer={<strong>{t('show-more')}</strong>}
 			onOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}
 			onClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}
+			onClick={(...args) => { alert('Box clicked!'); console.log(...args); }}
 		>{dummyData3}</CollapsibleBox>,
-		code: `<CollapsibleBox\n\tfooter={<strong>${t('show-more')}</strong>}\n\tonOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}\n\tonClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}\n>\n\t${dummyData3}\n</CollapsibleBox>`
+		code: `<CollapsibleBox\n\tfooter={<strong>${t('show-more')}</strong>}`
+				+ `\n\tonOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}`
+				+ `\n\tonClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}`
+				+ `\n\tonClick={(...args) => { alert('Box clicked!'); console.log(...args); }}\n>`
+				+ `\n\t${dummyData3}\n</CollapsibleBox>`
 	}
 ].map(component => {
 	component.stringName = component.name;
