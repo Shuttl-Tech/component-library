@@ -54,14 +54,26 @@ export class CollapsibleBox extends Component<Props> {
 		// if component state says it's expanded
 		if (isExpanded) {
 			// if component prop says it can be fully expanded
-			if (expanded === 'fully') expansionStateClass = cls(css.expanded, 'component--collapsible-box--container--expanded'); // then add the expanded class
-			else if (expanded === 'partially') expansionStateClass = cls(css['expanded-partially'], 'component--collapsible-box--container--expanded-partially'); // then add the expanded partially class.
+			if (expanded === 'fully') {
+				expansionStateClass = cls(css.expanded, 'component--collapsible-box--container--expanded');
+				bodyClassName = cls(bodyClassName, css.expanded, 'component--collapsible-box--body--expanded');
+			} // then add the expanded class
+			else if (expanded === 'partially') {
+				expansionStateClass = cls(css['expanded-partially'], 'component--collapsible-box--container--expanded-partially');
+				bodyClassName = cls(bodyClassName, css['expanded-partially'], 'component--collapsible-box--body--expanded-partially');
+			} // then add the expanded partially class.
 		}
 		// if component state says it's not expanded
 		else {
 			// if component prop says it can be fully collapsed
-			if (collapsed === 'fully') expansionStateClass = cls(css.collapsed, 'component--collapsible-box--container--collapsed'); // make it fully collapsed
-			else if (collapsed === 'partially') expansionStateClass = cls(css['collapsed-partially'], 'component--collapsible-box--container--collapsed-partially'); // make it fully collapsed
+			if (collapsed === 'fully') {
+				expansionStateClass = cls(css.collapsed, 'component--collapsible-box--container--collapsed');
+				bodyClassName = cls(bodyClassName, css.collapsed, 'component--collapsible-box--body--collapsed');
+			} // make it fully collapsed
+			else if (collapsed === 'partially') {
+				expansionStateClass = cls(css['collapsed-partially'], 'component--collapsible-box--container--collapsed-partially');
+				bodyClassName = cls(bodyClassName, css['collapsed-partially'], 'component--collapsible-box--body--collapsed-partially');
+			} // make it fully collapsed
 			// NOTE: The `collapsed-partially` class hasn't been defined as of now. [29 Aug, 18 - 1200 hrs]
 		}
 
@@ -74,7 +86,7 @@ export class CollapsibleBox extends Component<Props> {
 				header={header}
 				footer={footer}
 				headerClassName={cls(headerClassName, 'component--collapsible-box--header')}
-				bodyClassName={cls(css.body, expansionStateClass, bodyClassName, 'component--collapsible-box--body')}
+				bodyClassName={cls(css.body, bodyClassName, 'component--collapsible-box--body')}
 				footerClassName={cls(collapsed === 'fully' && !isExpanded ? css['footer-no-border'] : '', footerClassName)}
 			>
 				{body}
