@@ -19,7 +19,6 @@ terrace component component-name
 # export your component from the respective path
 
 yarn package
-git commit <your changes>
 git push <your changes>
 ```
 
