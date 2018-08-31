@@ -55,10 +55,8 @@ export class CollapsibleBox extends Component<Props> {
 		 * The partially collapsed state is useful when the expansion state toggles between partially expanded and fully expanded.
 		 * Since the component must have two states, expanded and collapsed, it's useful to have a partially-collapsed to fully-expanded state.
 		 */
-		let { header, children: body, footer, expanded = 'partially', collapsed = 'partially', headerClassName, bodyClassName, footerClassName, className, onClick = () => {} } = this.props;
+		let { header, children: body, footer: FooterComp, expanded = 'partially', collapsed = 'partially', headerClassName, bodyClassName, footerClassName, className, onClick = () => {} } = this.props;
 		let { isExpanded } = this.state;
-
-		footer = <div className={cls('component--collapsible-box--footer')} onClick={(...args) => this.toggleExpansion(...args)}>{footer}</div>;
 
 		let expansionStateClass;
 		// if component state says it's expanded
@@ -94,7 +92,7 @@ export class CollapsibleBox extends Component<Props> {
 			<ModularBox
 				className={cls(css.container, fullyCollapsibleClass, expansionStateClass, className)}
 				header={header}
-				footer={footer}
+				footer={() => <FooterComp onClick={(...args) => this.toggleExpansion(...args)}/>}
 				headerClassName={cls(headerClassName, 'component--collapsible-box--header')}
 				bodyClassName={cls(css.body, bodyClassName, 'component--collapsible-box--body')}
 				footerClassName={cls(collapsed === 'fully' && !isExpanded ? css['footer-no-border'] : '', footerClassName)}

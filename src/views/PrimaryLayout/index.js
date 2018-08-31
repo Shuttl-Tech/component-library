@@ -97,18 +97,18 @@ export const COMPONENTS = [
 	},
 	{
 		name: "ModularBox - Body + Header",
-		component: <ModularBox header={<strong>{dummyData1}</strong>}>{dummyData4}</ModularBox>,
-		code: `<ModularBox\n\theader={<strong>${dummyData1}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
+		component: <ModularBox header={props => <strong {...props}>{dummyData1}</strong>}>{dummyData4}</ModularBox>,
+		code: `<ModularBox\n\theader={props => <strong {...props}>${dummyData1}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
 	},
 	{
 		name: "ModularBox - Body + Footer",
-		component: <ModularBox footer={<strong>{dummyData2}</strong>}>{dummyData4}</ModularBox>,
-		code: `<ModularBox\n\tfooter={<strong>${dummyData2}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
+		component: <ModularBox footer={props => <strong {...props}>{dummyData2}</strong>}>{dummyData4}</ModularBox>,
+		code: `<ModularBox\n\tfooter={props => <strong {...props}>${dummyData2}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
 	},
 	{
 		name: "ModularBox - Body + Header + Footer",
-		component: <ModularBox header={<strong>{dummyData1}</strong>} footer={<strong>{dummyData2}</strong>}>{dummyData4}</ModularBox>,
-		code: `<ModularBox\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${dummyData2}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
+		component: <ModularBox header={props => <strong {...props}>{dummyData1}</strong>} footer={props => <strong {...props}>{dummyData2}</strong>}>{dummyData4}</ModularBox>,
+		code: `<ModularBox\n\theader={props => <strong {...props}>${dummyData1}</strong>}\n\tfooter={props => <strong {...props}>${dummyData2}</strong>}\n>\n\t${dummyData4}\n</ModularBox>`
 	},
 	{
 		name: "ModularBox - Body only - Events: onClick",
@@ -137,37 +137,40 @@ export const COMPONENTS = [
 	},
 	{
 		name: "CollapsibleBox - Partially Expandable - Body + Footer",
-		component: <CollapsibleBox footer={<strong>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
-		code: `<CollapsibleBox\n\tfooter={<strong>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
+		component: <CollapsibleBox footer={props => <strong {...props}>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
+		code: `<CollapsibleBox\n\tfooter={props => <strong {...props}>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
 	},
 	{
 		name: "CollapsibleBox - Partially Expandable - Body + Header + Footer",
-		component: <CollapsibleBox header={<strong>{dummyData1}</strong>} footer={<strong>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
-		code: `<CollapsibleBox\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
+		component: <CollapsibleBox header={props => <strong {...props}>{dummyData1}</strong>} footer={props => <strong {...props}>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
+		code: `<CollapsibleBox\n\theader={props => <strong {...props}>${dummyData1}</strong>}\n\tfooter={props => <strong {...props}>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
 	},
 	{
 		name: "CollapsibleBox - Fully Expandable - Body + Header + Footer",
-		component: <CollapsibleBox expanded='fully' header={<strong>{dummyData1}</strong>} footer={<strong>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
-		code: `<CollapsibleBox\n\texpanded='fully'\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
+		component: <CollapsibleBox expanded='fully' header={props => <strong {...props}>{dummyData1}</strong>} footer={props => <strong {...props}>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
+		code: `<CollapsibleBox\n\texpanded='fully'\n\theader={props => <strong {...props}>${dummyData1}</strong>}\n\tfooter={props => <strong {...props}>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
 	},
 	{
 		name: "CollapsibleBox - Fully Collapsible - Body + Header + Footer",
-		component: <CollapsibleBox collapsed='fully' header={<strong>{dummyData1}</strong>} footer={<strong>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
-		code: `<CollapsibleBox\n\tcollapsed='fully'\n\theader={<strong>${dummyData1}</strong>}\n\tfooter={<strong>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
+		component: <CollapsibleBox collapsed='fully' header={props => <strong {...props}>{dummyData1}</strong>} footer={props => <strong {...props}>{t('show-more')}</strong>}>{dummyData3}</CollapsibleBox>,
+		code: `<CollapsibleBox\n\tcollapsed='fully'\n\theader={props => <strong {...props}>${dummyData1}</strong>}\n\tfooter={props => <strong {...props}>${t('show-more')}</strong>}\n>\n\t${dummyData3}\n</CollapsibleBox>`
 	},
 	{
-		name: "CollapsibleBox - Partially Expandable - Body + Footer - Events: onOpen, onClose, onClick",
+		name: "CollapsibleBox - Partially Expandable - Header + Body + Footer - Events: onOpen, onClose, onClick",
 		component: <CollapsibleBox
-			footer={<strong>{t('show-more')}</strong>}
+			header={props => <strong {...props}>{dummyData2}</strong>}
+			footer={props => <strong {...props}>{t('show-more')}</strong>}
 			onOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}
 			onClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}
 			onClick={(...args) => { alert('Box clicked!'); console.log(...args); }}
 		>{dummyData3}</CollapsibleBox>,
-		code: `<CollapsibleBox\n\tfooter={<strong>${t('show-more')}</strong>}`
-				+ `\n\tonOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}`
-				+ `\n\tonClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}`
-				+ `\n\tonClick={(...args) => { alert('Box clicked!'); console.log(...args); }}\n>`
-				+ `\n\t${dummyData3}\n</CollapsibleBox>`
+		code: `<CollapsibleBox`
+			+ `\n\theader={props => <strong {...props}>{dummyData2}</strong>}`
+			+ `\n\tfooter={props => <strong {...props}>${t('show-more')}</strong>}`
+			+ `\n\tonOpen={(...args) => {alert('Open!'); console.log('onOpen', ...args)}}`
+			+ `\n\tonClose={(...args) => {alert('Close!'); console.log('onClose', ...args)}}`
+			+ `\n\tonClick={(...args) => { alert('Box clicked!'); console.log(...args); }}\n>`
+			+ `\n\t${dummyData3}\n</CollapsibleBox>`
 	}
 ].map(component => {
 	component.stringName = component.name;
