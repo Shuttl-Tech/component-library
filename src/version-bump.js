@@ -20,8 +20,8 @@ let oldVersion = file.version;
 let [major, minor, patch] = oldVersion.split('.').map(n => parseInt(n, 10));
 
 switch (UPGRADE) {
-	case UPGRADE_MODE.MINOR: minor++; break;
-	case UPGRADE_MODE.MAJOR: major++; break;
+	case UPGRADE_MODE.MINOR: minor++; patch=0; break;
+	case UPGRADE_MODE.MAJOR: major++; minor=0; patch=0; break;
 	default: /* PATCH */ patch++;
 }
 
