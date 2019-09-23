@@ -5,13 +5,46 @@ import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
+import multiEntry from 'rollup-plugin-multi-entry';
+import globby from 'globby';
 
 import pkg from './package.json'
 
 process.env.SASS_PATH = 'src';
 
-export default {
-  input: 'src/index.tsx',
+const plugins = [
+  external(),
+  postcss({
+    autoModules: true
+  }),
+  url(),
+  svgr(),
+  resolve(),
+  typescript({
+    rollupCommonJSResolveHack: true,
+    clean: true
+  }),
+  commonjs(),
+  multiEntry()
+];
+
+const files = globby.sync('src/components/**/index.tsx');
+
+const configs = files.map(file => ({
+  input: file,
+  output: [
+    {
+      file: file.replace('src', 'dist').replace(/\.tsx?$/, '.js'),
+      format: 'cjs',
+      exports: 'named',
+      sourcemap: true
+    }
+  ],
+  plugins
+}));
+
+export default [{
+  input: 'src/components/**/index.tsx',
   output: [
     {
       file: pkg.main,
@@ -26,18 +59,5 @@ export default {
       sourcemap: true
     }
   ],
-  plugins: [
-    external(),
-    postcss({
-      autoModules: true
-    }),
-    url(),
-    svgr(),
-    resolve(),
-    typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true
-    }),
-    commonjs()
-  ]
-}
+  plugins
+}, ...configs];

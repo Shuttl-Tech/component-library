@@ -2,6 +2,7 @@ import React, { ReactChild } from 'react';
 
 import css from './styles.module.scss';
 
-const Button = ({ children }: { children: ReactChild }) => <div className={css.container}>{children}</div>;
-
-export default Button;
+export const Button = ({ children, title = 'Nothing' }: { children: ReactChild, title?: string }) => <div className={css.container}>
+  <div>{title}</div>
+  <div>{children}</div>
+</div>;
