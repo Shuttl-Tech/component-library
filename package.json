@@ -26,6 +26,8 @@
     "check-format": "prettier --check \"{src,example,.storybook}/**/*.{ts,tsx,js,scss}\""
   },
   "dependencies": {
+    "@types/classnames": "^2.2.9",
+    "classnames": "^2.2.6",
     "include-media": "^1.4.9"
   },
   "peerDependencies": {
