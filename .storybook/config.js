@@ -1,5 +1,6 @@
-import { configure, addParameters } from '@storybook/react';
-import theme from './theme.js';
+import { configure, addParameters, addDecorator } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+import theme from './theme';
 
 addParameters({
   options: {
@@ -7,5 +8,7 @@ addParameters({
   },
 });
 
-// automatically import all files ending in *.stories.js
+addDecorator(withInfo);
+
 configure(require.context('../stories', true, /\.stories\.tsx$/), module);
+
