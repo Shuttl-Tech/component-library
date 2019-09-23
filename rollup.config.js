@@ -5,9 +5,10 @@ import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
-import autoprefixer from 'autoprefixer'
 
 import pkg from './package.json'
+
+process.env.SASS_PATH = 'src';
 
 export default {
   input: 'src/index.tsx',
@@ -28,13 +29,7 @@ export default {
   plugins: [
     external(),
     postcss({
-      plugins: [
-        autoprefixer
-      ],
-      modules: true,
-      sourceMap: true,
-      extract: false,
-      extensions: ['.sass','.css']
+      autoModules: true
     }),
     url(),
     svgr(),
