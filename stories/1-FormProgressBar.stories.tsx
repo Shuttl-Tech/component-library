@@ -13,6 +13,6 @@ export const withCompleteSteps = () => (
 );
 
 export const withOnlyOneStep = () => (
-  <FormProgressBar formSteps={[0, 1, 2]} formStep={1}
+  <FormProgressBar formSteps={[0, 1, 2]} formStep={0}
                    onStepClick={action('clicked')}/>
 );
