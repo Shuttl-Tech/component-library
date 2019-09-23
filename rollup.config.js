@@ -5,6 +5,7 @@ import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
+import autoprefixer from 'autoprefixer'
 
 import pkg from './package.json'
 
