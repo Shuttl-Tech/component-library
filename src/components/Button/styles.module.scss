@@ -1,9 +1,9 @@
-@import '../../globals/variables';
-@import '../../globals/mixins';
+@import 'globals/variables';
+@import 'globals/mixins';
 
 .container {
   @include circle(100px);
   @include centered;
   color: $greyscale-dark-4;
-  background-color: $support-cool-dark-1;
+  background-color: $cyan-dark-1;
 }
