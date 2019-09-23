@@ -22,8 +22,8 @@
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "format": "prettier --write \"{src,example,.storybook}/**/*.{ts,tsx,js}\"",
-    "check-format": "prettier --check \"{src,example,.storybook}/**/*.{ts,tsx,js}\""
+    "format": "prettier --write \"{src,example,.storybook}/**/*.{ts,tsx,js,scss}\"",
+    "check-format": "prettier --check \"{src,example,.storybook}/**/*.{ts,tsx,js,scss}\""
   },
   "dependencies": {
     "include-media": "^1.4.9"

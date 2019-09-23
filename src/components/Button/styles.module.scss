@@ -2,7 +2,8 @@
 @import 'globals/mixins';
 
 .container {
-  @include expanded;
+  @include circle(100px);
   @include centered;
   color: $greyscale-dark-4;
+  background-color: $cyan-dark-2;
 }
