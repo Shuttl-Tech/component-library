@@ -8,9 +8,9 @@ type Props = {
   formStep: number;
   onStepClick: Function;
   isComplete?: boolean;
-}
+};
 
-export const FormProgressBar = ({ formSteps, formStep, onStepClick, isComplete }: Props ) => {
+export const FormProgressBar = ({ formSteps, formStep, onStepClick, isComplete }: Props) => {
   const lastFormStep = formSteps.length - 1;
   const progress = Math.floor(((lastFormStep - formStep) / lastFormStep) * 100);
 
