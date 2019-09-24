@@ -8,14 +8,14 @@
   @include centered;
   display: inline-flex;
 
-  &--default{
+  &--default {
     background-color: $white;
     border: 1px solid $cyan-light-1;
     .pill-text {
       color: $cyan-light-1;
     }
 
-    &:hover{
+    &:hover {
       background-color: $cyan-light-5;
     }
   }
@@ -34,7 +34,7 @@
     }
   }
 
-  &--grey{
+  &--grey {
     background-color: $greyscale-light-1;
     .pill-text {
       color: $greyscale-dark-4;
