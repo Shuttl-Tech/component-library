@@ -17,5 +17,4 @@ export const Avatar = ({ url, size, className }: AvatarProps) => (
 
 Avatar.defaultProps = {
   size: 80,
-  className: null,
 };
