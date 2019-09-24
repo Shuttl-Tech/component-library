@@ -119,6 +119,18 @@ $green-1: #219653;
 $green-2: #27ae60;
 $green-3: #6fcf97;
 
+$white: rgb(255, 255, 255);
+$butterscotch: rgb(250, 182, 80);
+$pumpkin-orange: rgb(250, 117, 40);
+$orange-butterscotch:	rgb(251, 150, 60);
+
+// Shadows
+$box-shadow-butterscotch: 0 4px 10px 0 rgba(248, 165, 64, 0.5);
+
+//Gradients
+$gradient-orangeish: linear-gradient(285deg, $pumpkin-orange, $butterscotch);
+$gradient-orangeish-flipped: linear-gradient(115deg, $pumpkin-orange, $butterscotch);
+
 // Z-Indices
 $z--base: 0;
 $z--sidebar: 1;
