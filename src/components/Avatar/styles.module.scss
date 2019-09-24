@@ -1,0 +1,15 @@
+@import 'globals/variables';
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 6px 10px 0 $greyscale-light-2;
+
+  img {
+    vertical-align: middle;
+    height: 100%;
+    border-radius: 50%;
+    border: solid $grid-base white;
+    box-sizing: border-box;
+  }
+}
