@@ -1,0 +1,25 @@
+@import 'globals/variables';
+
+.header-container {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-bottom: 1px solid $greyscale-dark-3;
+}
+
+.icn svg {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+
+.header-details {
+  font-size: $font-standard;
+  color: $gray-black;
+  margin-left: 15px;
+}
+
+.header-detail {
+  font-weight: $weight-bold;
+  padding-top: 3px;
+}
