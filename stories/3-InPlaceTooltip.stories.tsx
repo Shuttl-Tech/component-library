@@ -1,5 +1,5 @@
 import React from 'react';
-import { InPlaceTooltip } from '../src/components/InPlaceTooltip';
+import { InPlaceTooltip } from 'components/InPlaceTooltip';
 
 export default {
   title: 'InPlaceTooltip'
