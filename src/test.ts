@@ -1,4 +1,4 @@
-import {Button} from './';
+import {Button} from 'components/Button';
 
 describe('Button', () => {
   it('is truthy', () => {

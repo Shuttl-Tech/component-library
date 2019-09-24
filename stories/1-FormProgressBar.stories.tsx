@@ -8,11 +8,15 @@ export default {
 };
 
 export const withCompleteSteps = () => (
-  <FormProgressBar formSteps={[0, 1, 2]} formStep={2}
+  <div style={{margin: '40px'}}>
+    <FormProgressBar formSteps={[0, 1, 2]} formStep={2}
                    onStepClick={action('clicked')}/>
+  </div>
 );
 
 export const withOnlyOneStep = () => (
-  <FormProgressBar formSteps={[0, 1, 2]} formStep={0}
+  <div style={{margin: '40px'}}>
+    <FormProgressBar formSteps={[0, 1, 2]} formStep={0}
                    onStepClick={action('clicked')}/>
+  </div>
 );
