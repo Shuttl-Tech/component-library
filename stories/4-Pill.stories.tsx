@@ -5,5 +5,7 @@ export default {
   title: 'Pill',
 };
 
-export const YellowPill = () => <Pill>Trip Feedback</Pill>;
-export const BluePill = () => <Pill color={'blue'}>Customer care</Pill>;
+export const DefaultPill = () => <Pill>Trip Feedback</Pill>;
+export const YellowPill = () => <Pill color={'yellow'}>Trip Feedback</Pill>;
+export const BluePill = () => <Pill color={'blue'}>Trip Feedback</Pill>;
+export const GreyPill = () => <Pill color={'grey'}>Trip Feedback</Pill>;

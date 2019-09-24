@@ -5,7 +5,7 @@ import css from './styles.module.scss';
 
 export type Props = {
   className?: string;
-  color?: string;
+  color?: "default" | "yellow" | "blue" | "grey";
   children: ReactNode;
 };
 
@@ -24,5 +24,5 @@ export const Pill = ({ className, color, children }: Props) => (
 );
 
 Pill.defaultProps = {
-  color: 'yellow',
+  color: 'default',
 };

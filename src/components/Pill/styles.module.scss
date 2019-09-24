@@ -8,6 +8,18 @@
   @include centered;
   display: inline-flex;
 
+  &--default{
+    background-color: $white;
+    border: 1px solid $cyan-light-1;
+    .pill-text {
+      color: $cyan-light-1;
+    }
+
+    &:hover{
+      background-color: $cyan-light-5;
+    }
+  }
+
   &--yellow {
     background-color: rgba($mango-two, 0.3);
     .pill-text {
@@ -19,6 +31,13 @@
     background-color: rgba($light-navy, 0.2);
     .pill-text {
       color: $light-navy;
+    }
+  }
+
+  &--grey{
+    background-color: $greyscale-light-1;
+    .pill-text {
+      color: $greyscale-dark-4;
     }
   }
 }
