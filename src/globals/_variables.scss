@@ -126,13 +126,19 @@ $orange-butterscotch: rgb(251, 150, 60);
 $mango-two: rgb(255, 191, 50);
 $light-orange: rgb(248, 165, 64);
 $light-navy: rgb(20, 78, 147);
+$weird-green: rgb(69, 233, 148);
+$tealish: rgb(35, 188, 186);
+$turquoise-blue: rgb(0, 173, 183);
+$topaz: rgb(21, 206, 171);
 
 // Shadows
 $box-shadow-butterscotch: 0 4px 10px 0 rgba(248, 165, 64, 0.5);
+$box-shadow-teal: 0 4px 10px 0 $turquoise-blue;
 
 //Gradients
 $gradient-orangeish: linear-gradient(285deg, $pumpkin-orange, $butterscotch);
 $gradient-orangeish-flipped: linear-gradient(115deg, $pumpkin-orange, $butterscotch);
+$gradient-greenish: linear-gradient(255deg, $tealish, $weird-green);
 
 // Z-Indices
 $z--base: 0;

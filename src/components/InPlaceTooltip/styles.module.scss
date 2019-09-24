@@ -7,8 +7,8 @@ $arrow-size: 10px;
   width: 220px;
   height: 30px;
   padding: $grid-base-3x;
-  background-image: $gradient-orangeish;
-  box-shadow: $box-shadow-butterscotch;
+  background-color: $greyscale-light-1;
+  box-shadow: 0 4px 10px 0 $greyscale-light-1;
   border-radius: $grid-base;
   font-size: $font-standard;
   letter-spacing: 0.5px;
@@ -29,18 +29,52 @@ $arrow-size: 10px;
     width: 0;
     height: 0;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid $orange-butterscotch;
+    border-bottom: 5px solid $greyscale-light-1;
     border-left: 5px solid transparent;
   }
 
   &.tooltip--left .arrow {
     left: calc(0% + #{$grid-base});
-    border-bottom: 5px solid $butterscotch;
+    border-bottom: 5px solid $greyscale-light-1;
   }
 
   &.tooltip--right .arrow {
     left: unset;
     right: calc(0% + #{$grid-base});
-    border-bottom: 5px solid $pumpkin-orange;
+    border-bottom: 5px solid $greyscale-light-1;
+  }
+
+  &--yellow {
+    background-image: $gradient-orangeish;
+    box-shadow: $box-shadow-butterscotch;
+    background-color: transparent;
+    .arrow {
+      border-bottom: 5px solid $orange-butterscotch;
+    }
+
+    &.tooltip--left .arrow {
+      border-bottom: 5px solid $butterscotch;
+    }
+
+    &.tooltip--right .arrow {
+      border-bottom: 5px solid $pumpkin-orange;
+    }
+  }
+
+  &--green {
+    background-image: $gradient-greenish;
+    box-shadow: $box-shadow-teal;
+    background-color: transparent;
+    .arrow {
+      border-bottom: 5px solid $topaz;
+    }
+
+    &.tooltip--left .arrow {
+      border-bottom: 5px solid $weird-green;
+    }
+
+    &.tooltip--right .arrow {
+      border-bottom: 5px solid $tealish;
+    }
   }
 }

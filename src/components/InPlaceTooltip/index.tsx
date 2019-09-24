@@ -8,9 +8,10 @@ type Props = {
   className?: string;
   absoluteValue?: number;
   value: any;
+  color?: 'yellow' | 'green';
 };
 
-export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue = 33, value }: Props) => {
+export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue = 33, value, color }: Props) => {
   let absolutePositioningStyles = {};
   if (position === 'absolute') {
     let min = 2,
@@ -25,6 +26,7 @@ export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue
     <div
       className={cls(
         css.tooltip,
+        color && css[`tooltip--${color}`],
         css[`tooltip--${position}`],
         'component--in-place-tooltip',
         `component--in-place-tooltip--${position}`,
