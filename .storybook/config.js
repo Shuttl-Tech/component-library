@@ -10,10 +10,10 @@ addParameters({
 });
 
 const styles = {
-  margin: '40px'
+  margin: '40px',
 };
 
-const centeredDecorator = storyFn => (<div style={styles}>{storyFn()}</div>);
+const centeredDecorator = storyFn => <div style={styles}>{storyFn()}</div>;
 
 addDecorator(withInfo);
 addDecorator(centeredDecorator);

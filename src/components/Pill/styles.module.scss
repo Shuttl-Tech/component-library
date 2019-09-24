@@ -1,0 +1,32 @@
+@import 'globals/variables';
+@import 'globals/mixins';
+
+.pill-wrapper {
+  padding: $grid-base-2x $grid-base-3x;
+  border-radius: 100vw;
+  box-sizing: border-box;
+  @include centered;
+  display: inline-flex;
+
+  &--yellow {
+    background-color: rgba($mango-two, 0.3);
+    .pill-text {
+      color: $light-orange;
+    }
+  }
+
+  &--blue {
+    background-color: rgba($light-navy, 0.2);
+    .pill-text {
+      color: $light-navy;
+    }
+  }
+}
+
+.pill-text {
+  font-size: $font-small-2;
+  text-transform: uppercase;
+  font-weight: $weight-heavy;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
