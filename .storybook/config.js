@@ -2,6 +2,7 @@ import React from 'react';
 import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import theme from './theme';
+import './scss-loader.scss';
 
 addParameters({
   options: {

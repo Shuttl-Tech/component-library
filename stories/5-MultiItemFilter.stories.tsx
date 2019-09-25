@@ -1,25 +1,24 @@
-import React from 'react';
-import MorningIcon from '@material-ui/icons/TodayOutlined';
-import EveningIcon from '@material-ui/icons/Brightness3';
-import ACIcon from '@material-ui/icons/Label';
+import React, { useState } from 'react';
+import IconOne from '@material-ui/icons/Filter1';
+import IconTwo from '@material-ui/icons/Filter2';
+import IconThree from '@material-ui/icons/Filter3';
 import { Filter } from 'components/MultiItemFilter';
-import { action } from '@storybook/addon-actions';
 
 const items = [
   {
-    value: 'morning',
-    label: 'Morning',
-    icon: <MorningIcon/>,
+    value: 'one',
+    label: 'One',
+    icon: <IconOne/>,
   },
   {
-    value: 'evening',
-    label: 'Evening',
-    icon: <EveningIcon/>,
+    value: 'two',
+    label: 'Two',
+    icon: <IconTwo/>,
   },
   {
-    value: 'ac',
-    label: 'AC',
-    icon: <ACIcon/>,
+    value: 'three',
+    label: 'Three',
+    icon: <IconThree/>,
   }
 ];
 
@@ -27,10 +26,36 @@ export default {
   title: 'MultiItemFilter'
 };
 
-export const withIconAndDetails = () => (
-  <Filter data={items} onChange={action('clicked')}/>
-);
+const updateListWithItem = ({data, selectedFilters}: {data: string, selectedFilters: Array<string>}) => {
+  if (!selectedFilters.includes(data)) {
+    return [...selectedFilters, data]
+  } else {
+    return selectedFilters.filter(filter => filter !== data);
+  }
+};
 
-export const withIconRight = () => (
-  <Filter iconPlacement={'right'} data={items} onChange={action('clicked')}/>
-);
+export const withoutIcon = () => {
+  const [selectedFilters, setSelectedFilters] = useState([] as Array<string>);
+  const setSelectedFilterValue = (data: string) => {
+    setSelectedFilters(updateListWithItem({data, selectedFilters}));
+  };
+
+  return <Filter data={items.map(item => {return {value: item.value, label: item.label}})} onChange={(data) => setSelectedFilterValue(data)} selected={selectedFilters}/>
+};
+
+export const withIconLeft = () => {
+  const [selectedFilters, setSelectedFilters] = useState([] as Array<string>);
+  const setSelectedFilterValue = (data: string) => {
+    setSelectedFilters(updateListWithItem({data, selectedFilters}));
+  };
+  return <Filter data={items} onChange={(data) => setSelectedFilterValue(data)} selected={selectedFilters}/>
+};
+
+export const withIconRight = () => {
+  const [selectedFilters, setSelectedFilters] = useState([] as Array<string>);
+  const setSelectedFilterValue = (data: string) => {
+    setSelectedFilters(updateListWithItem({data, selectedFilters}));
+  };
+
+  return <Filter iconPlacement={'right'} data={items} onChange={(data) => setSelectedFilterValue(data)} selected={selectedFilters}/>
+};

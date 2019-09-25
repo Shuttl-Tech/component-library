@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 import cls from 'classnames';
 
 import css from './styles.module.scss';
@@ -34,36 +34,26 @@ export type Props = {
     label: string | number;
     icon?: ReactNode;
   }>;
-  onChange: (data: Array<string>) => void;
+  onChange: (data: string) => void;
+  selected: (string | undefined)[]
   classes?: {
     root: string;
     option: string;
   };
 };
 
-export const Filter = ({ iconPlacement, data, onChange, classes }: Props) => {
-  const [selectedFilters, setSelectedFilters] = useState([] as Array<string>);
-  const setSelectedFilterValue = (data: string) => {
-    if (!selectedFilters.includes(data)) {
-      setSelectedFilters([...selectedFilters, data]);
-      onChange([...selectedFilters, data]);
-    } else {
-      const updatedSelectedFilters = selectedFilters.filter(filter => filter !== data);
-      setSelectedFilters(updatedSelectedFilters);
-      onChange(updatedSelectedFilters);
-    }
-  };
+export const Filter = ({ iconPlacement, data, onChange, selected, classes }: Props) => {
 
   return (
     <div className={cls(css['filter-wrapper'], classes && classes.root)}>
       {data.map(option => {
-        const isSelected = selectedFilters.includes(option.value);
+        const isSelected = selected.includes(option.value);
         return (
           <Option
             key={option.value}
             {...option}
             iconPlacement={iconPlacement}
-            onChange={setSelectedFilterValue}
+            onChange={onChange}
             isSelected={isSelected}
             className={classes && classes.option}
           />
@@ -79,4 +69,5 @@ Filter.defaultProps = {
     root: '',
     option: '',
   },
+  selected: []
 };
