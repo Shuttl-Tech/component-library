@@ -1,0 +1,35 @@
+@import 'globals/variables';
+
+.filter-wrapper {
+  display: flex;
+
+  .filter-item {
+    padding: $grid-base-2x $grid-base-4x;
+    border-radius: $grid-base;
+    background-color: $greyscale-light-4;
+    margin-right: $grid-base-4x;
+    font-size: $font-standard;
+    color: $greyscale-dark-3;
+    font-weight: $weight-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+      margin: 0 $grid-base;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.icon-right {
+      flex-direction: row-reverse;
+    }
+
+    &.selected {
+      background-color: $light-blue-grey;
+      color: $turquoise-blue;
+    }
+  }
+}
