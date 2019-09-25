@@ -13,7 +13,7 @@ export const InfoCardHeader = ({ icon, headerInfo, headerDetail }: Props) => {
     <div className={css['header-container']}>
       <div className={css.icn}>{icon}</div>
       <div className={css['header-details']}>
-        <div className={css['header-title']}>{headerInfo}</div>
+        <div>{headerInfo}</div>
         <div className={css['header-detail']}>{headerDetail}</div>
       </div>
     </div>
