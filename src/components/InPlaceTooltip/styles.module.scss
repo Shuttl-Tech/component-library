@@ -36,6 +36,7 @@ $arrow-size: 10px;
   &.tooltip--left .arrow {
     left: calc(0% + #{$grid-base});
     border-bottom: 5px solid $greyscale-light-1;
+    right: unset;
   }
 
   &.tooltip--right .arrow {

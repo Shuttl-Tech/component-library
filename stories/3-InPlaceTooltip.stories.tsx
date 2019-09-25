@@ -20,3 +20,7 @@ export const TooltipYellowTheme = () => (
 export const TooltipGreenTheme = () => (
   <InPlaceTooltip value='Hello World!' absoluteValue={40} position='center' color={'green'}/>
 );
+
+export const withTooltipOnLeft = () => (
+  <InPlaceTooltip value='Hello World!' absoluteValue={40} position='left' />
+);
