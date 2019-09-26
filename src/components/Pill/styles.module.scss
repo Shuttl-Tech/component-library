@@ -8,6 +8,14 @@
   @include centered;
   display: inline-flex;
 
+  .pill-text {
+    font-size: $font-small-2;
+    text-transform: uppercase;
+    font-weight: $weight-heavy;
+    letter-spacing: 0.8px;
+    text-align: center;
+  }
+
   &--default {
     background-color: $white;
     border: 1px solid $cyan-light-1;
@@ -40,12 +48,14 @@
       color: $greyscale-dark-4;
     }
   }
-}
 
-.pill-text {
-  font-size: $font-small-2;
-  text-transform: uppercase;
-  font-weight: $weight-heavy;
-  letter-spacing: 0.8px;
-  text-align: center;
+  &--white{
+    box-shadow: 0 2px 4px 0 $greyscale-light-1;
+    .pill-text{
+      color: $warm-grey;
+      font-size: 14px;
+      text-transform: none;
+      font-weight: $weight-normal;
+    }
+  }
 }

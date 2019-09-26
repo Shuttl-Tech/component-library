@@ -5,7 +5,7 @@ import css from './styles.module.scss';
 
 export type Props = {
   className?: string;
-  color?: 'default' | 'yellow' | 'blue' | 'grey';
+  color?: 'default' | 'yellow' | 'blue' | 'grey' | 'white';
   children: ReactNode;
 };
 
