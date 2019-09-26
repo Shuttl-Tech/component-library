@@ -1,0 +1,26 @@
+@import 'globals/variables';
+
+.help-text-box {
+  display: flex;
+  border-radius: 5px;
+  background-color: $blue-grey-light-4;
+  padding: 10px 12px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+}
+
+.help-text-flat {
+  display: flex;
+  background-color: $greyscale-light-4;
+  padding: 10px 12px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+}
