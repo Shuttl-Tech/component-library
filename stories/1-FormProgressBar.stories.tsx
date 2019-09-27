@@ -1,18 +1,18 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+// import { action } from '@storybook/addon-actions';
 
-import { FormProgressBar } from 'components/FormProgressBar';
+import { ProgressBar } from 'components/ProgressBar';
 
 export default {
   title: 'FormProgressBar',
 };
 
 export const withCompleteSteps = () => (
-    <FormProgressBar formSteps={[0, 1, 2]} formStep={2}
-                   onStepClick={action('clicked')}/>
+    <ProgressBar steps={['Step 1', 'Step 2', 'Step 3']} formStep={2} isComplete={true}
+                   />
 );
 
 export const withOnlyOneStep = () => (
-    <FormProgressBar formSteps={[0, 1, 2]} formStep={0}
-                   onStepClick={action('clicked')}/>
+    <ProgressBar steps={['Step 1', 'Step 2', 'Step 3']} formStep={0}
+                   />
 );
