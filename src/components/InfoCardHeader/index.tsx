@@ -1,16 +1,16 @@
-import React, { ReactNode } from 'react';
-
+import React, { HTMLAttributes, ReactNode } from 'react';
+import cls from 'classnames';
 import css from './styles.module.scss';
 
 type Props = {
   icon: ReactNode;
   headerInfo: String;
   headerDetail: String;
-};
+} & HTMLAttributes<HTMLDivElement>;
 
-export const InfoCardHeader = ({ icon, headerInfo, headerDetail }: Props) => {
+export const InfoCardHeader = ({ icon, headerInfo, headerDetail, ...props }: Props) => {
   return (
-    <div className={css['header-container']}>
+    <div className={cls(css['header-container'], props.className)} {...props}>
       <div className={css.icn}>{icon}</div>
       <div className={css['header-details']}>
         <div>{headerInfo}</div>

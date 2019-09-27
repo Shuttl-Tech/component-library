@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import cls from 'classnames';
 
 import css from './styles.module.scss';
@@ -9,9 +9,9 @@ type Props = {
   absoluteValue?: number;
   value: any;
   color?: 'yellow' | 'green';
-};
+} & HTMLAttributes<HTMLDivElement>;
 
-export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue = 33, value, color }: Props) => {
+export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue = 33, value, color, ...props }: Props) => {
   let absolutePositioningStyles = {};
   if (position === 'absolute') {
     let min = 2,
@@ -32,6 +32,7 @@ export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue
         `component--in-place-tooltip--${position}`,
         className
       )}
+      {...props}
     >
       {value}
       <div className={cls(css.arrow, 'component--in-place-tooltip--arrow')} style={absolutePositioningStyles} />

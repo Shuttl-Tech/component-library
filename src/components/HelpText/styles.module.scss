@@ -1,26 +1,29 @@
+@import 'globals/mixins';
 @import 'globals/variables';
 
-.help-text-box {
+.help-text {
   display: flex;
-  border-radius: 5px;
-  background-color: $blue-grey-light-4;
-  padding: 10px 12px;
+  letter-spacing: $ls-standard;
+  font-weight: $weight-bold;
+  font-style: italic;
+  padding: $grid-base-3x;
+  font-size: $font-small-1;
+  line-height: 1.5;
+  border-radius: $border-radius-1;
+}
 
-  svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
+svg.icon { // Mui Override
+  @include square($grid-base-4x);
+  margin-right: $grid-base-2x;
+}
+
+.help-text-box {
+  background-color: $cyan-light-5;
+  color: $blue-grey-dark-1;
 }
 
 .help-text-flat {
-  display: flex;
   background-color: $greyscale-light-4;
   padding: 10px 12px;
-
-  svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
+  color: $greyscale-dark-2;
 }
