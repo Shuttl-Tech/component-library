@@ -3,7 +3,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 type Props = {
-  title: ReactNode,
+  title: ReactNode;
   placement?:
     | 'bottom-end'
     | 'bottom-start'
@@ -17,13 +17,13 @@ type Props = {
     | 'top-end'
     | 'top-start'
     | 'top';
-  children: React.ReactElement,
-}
+  children: React.ReactElement;
+};
 
 const useStylesArrow = makeStyles((theme: Theme) => ({
   tooltip: {
     position: 'relative',
-    background: 'linear-gradient(309deg, #575757, #262626)'
+    background: 'linear-gradient(309deg, #575757, #262626)',
   },
 }));
 
@@ -31,15 +31,7 @@ export const StandardTooltip = (props: Props) => {
   const { ...classes } = useStylesArrow();
 
   return (
-    <Tooltip
-      classes={classes}
-      {...props}
-      title={
-        <React.Fragment>
-          {props.title}
-        </React.Fragment>
-      }
-    >
+    <Tooltip classes={classes} {...props} title={<React.Fragment>{props.title}</React.Fragment>}>
       {props.children}
     </Tooltip>
   );

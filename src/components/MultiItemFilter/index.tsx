@@ -35,7 +35,7 @@ export type Props = {
     icon?: ReactNode;
   }>;
   onChange: (data: string) => void;
-  selected: (string | undefined)[]
+  selected: (string | undefined)[];
   classes?: {
     root: string;
     option: string;
@@ -43,7 +43,6 @@ export type Props = {
 };
 
 export const Filter = ({ iconPlacement, data, onChange, selected, classes }: Props) => {
-
   return (
     <div className={cls(css['filter-wrapper'], classes && classes.root)}>
       {data.map(option => {
@@ -69,5 +68,5 @@ Filter.defaultProps = {
     root: '',
     option: '',
   },
-  selected: []
+  selected: [],
 };
