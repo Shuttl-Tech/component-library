@@ -84,7 +84,7 @@
   background: linear-gradient(30deg, $color1, $color2 30%, $color3 80%);
 }
 
-@mixin animated-background-bars($color1: $support-cool-light-5, $color2: $support-cool-light-4) {
+@mixin animated-background-bars($color1: $cyan-light-5, $color2: $cyan-light-4) {
   background: repeating-linear-gradient(60deg, $color1, $color1 50px, $color2 50px, $color2 100px);
   background-position-x: 0;
   background-size: 2000px;
@@ -96,20 +96,20 @@
 }
 
 @mixin animated-background-bars-primary {
-  @include animated-background-bars($support-cool-light-1, $support-cool-dark-2);
+  @include animated-background-bars($cyan-light-1, $cyan-dark-2);
 }
 
 @mixin animated-background-bars-secondary {
-  @include animated-background-bars($support-warm-light-3, lighten($support-warm-light-2, 5%));
+  @include animated-background-bars($red-light-3, lighten($red-light-2, 5%));
 }
 
 @mixin animated-background-bars-tertiary {
-  @include animated-background-bars($accent-light-2, $accent-standard);
+  @include animated-background-bars($yellow-light-2, $yellow-standard);
 }
 
 @mixin background-primary {
   color: white;
-  @include tri-color-background-gradient($support-cool-light-2, $support-cool-light-1, $support-cool-dark-2);
+  @include tri-color-background-gradient($cyan-light-2, $cyan-light-1, $cyan-dark-2);
   @include common-background-styles;
 
   &[data-processing='true'],
@@ -119,12 +119,8 @@
 }
 
 @mixin background-secondary {
-  color: darken($support-warm-dark-4, 5%);
-  @include tri-color-background-gradient(
-    $support-warm-light-4,
-    $support-warm-light-3,
-    lighten($support-warm-light-2, 5%)
-  );
+  color: darken($red-dark-4, 5%);
+  @include tri-color-background-gradient($red-light-4, $red-light-3, lighten($red-light-2, 5%));
   @include common-background-styles;
 
   &[data-processing='true'],
@@ -134,8 +130,8 @@
 }
 
 @mixin background-tertiary {
-  color: darken($accent-dark-4, 10%);
-  @include tri-color-background-gradient($accent-light-3, $accent-light-2, $accent-standard);
+  color: darken($yellow-dark-4, 10%);
+  @include tri-color-background-gradient($yellow-light-3, $yellow-light-2, $yellow-standard);
   @include common-background-styles;
 
   &[data-processing='true'],
@@ -166,7 +162,7 @@
   width: fit-content;
   padding: $grid-base $grid-base-2x;
   border-radius: $border-radius-standard;
-  color: $support-cool-dark-4;
+  color: $cyan-dark-4;
   border: 1px solid;
   text-transform: uppercase;
   transition: background-color $quick-ease-out, transform $quick-ease-out;
@@ -179,7 +175,7 @@
   }
 
   &:hover {
-    background-color: $support-cool-light-5;
+    background-color: $cyan-light-5;
   }
 
   &:active {
@@ -195,14 +191,14 @@
   color: inherit;
   text-decoration: none;
   &:hover {
-    color: $support-cool-dark-2;
+    color: $cyan-dark-2;
   }
 
   @if ($light-mode) {
     color: white;
     text-decoration: none;
     &:hover {
-      color: $support-cool-light-3;
+      color: $cyan-light-3;
     }
   }
 }
