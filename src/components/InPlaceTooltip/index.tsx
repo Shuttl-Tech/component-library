@@ -11,7 +11,14 @@ type Props = {
   color?: 'yellow' | 'green';
 } & HTMLAttributes<HTMLDivElement>;
 
-export const InPlaceTooltip = ({ position = 'absolute', className, absoluteValue = 33, value, color, ...props }: Props) => {
+export const InPlaceTooltip = ({
+  position = 'absolute',
+  className,
+  absoluteValue = 33,
+  value,
+  color,
+  ...props
+}: Props) => {
   let absolutePositioningStyles = {};
   if (position === 'absolute') {
     let min = 2,
