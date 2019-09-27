@@ -26,7 +26,17 @@ const plugins = [
   }),
   commonjs({
     namedExports: {
-      'react-is': ['ForwardRef']
+      'react-is': ['ForwardRef'],
+      'node_modules/@material-ui/core/styles/index.js': [
+        'createGenerateClassName',
+        'createMuiTheme',
+        'createStyles',
+        'jssPreset',
+        'MuiThemeProvider',
+        'withStyles',
+        'withTheme'
+      ],
+      'node_modules/@material-ui/core/Modal/index.js': [ 'ModalManager' ]
     }
   }),
   multiEntry()
