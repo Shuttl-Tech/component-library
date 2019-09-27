@@ -24,7 +24,11 @@ const plugins = [
     rollupCommonJSResolveHack: true,
     clean: true
   }),
-  commonjs(),
+  commonjs({
+    namedExports: {
+      'react-is': ['ForwardRef']
+    }
+  }),
   multiEntry()
 ];
 
