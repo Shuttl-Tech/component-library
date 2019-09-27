@@ -35,19 +35,25 @@ const plugins = [
 const files = globby.sync('src/components/**/index.tsx');
 
 const configs = files.map(file => ({
+  external: ['react', 'react-dom'],
   input: file,
   output: [
     {
       file: file.replace('src', 'dist').replace(/\.tsx?$/, '.js'),
       format: 'cjs',
       exports: 'named',
-      sourcemap: true
+      sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      }
     }
   ],
   plugins
 }));
 
 export default [{
+  external: ['react', 'react-dom'],
   input: 'src/components/**/index.tsx',
   output: [
     {
