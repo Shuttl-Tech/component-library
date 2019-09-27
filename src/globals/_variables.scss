@@ -36,6 +36,8 @@ $weight-black: 900;
 // Border Properties
 $border-radius-standard: $grid-base;
 $border-radius-small: $grid-base / 2;
+$border-radius-1: 5px;
+$border-radius-2: 6px;
 
 // Timings
 $animation-standard: 0.25s;
@@ -153,6 +155,9 @@ $z--modal: 100;
 $z--toast: 20000;
 $z--toast--active: 20001;
 $z--maximum: 2147483647;
+
+// Letter Spacings
+$ls-standard: 0.5px;
 
 // Box Shadows
 @mixin shadow-1 {
