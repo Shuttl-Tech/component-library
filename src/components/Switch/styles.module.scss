@@ -1,0 +1,30 @@
+@import 'globals/variables';
+
+.switchBox {
+  height: 40px;
+  border-radius: 100vw;
+  border: 1px solid $greyscale-light-3;
+  background-color: $greyscale-light-5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $grid-base;
+}
+
+.element {
+  color: $greyscale-dark-2;
+  font-weight: $weight-bold;
+  letter-spacing: 0.6px;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+
+  &.selected {
+    color: $cyan-light-2;
+    height: 32px;
+    line-height: 32px;
+    background-color: $white;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 100vw;
+  }
+}

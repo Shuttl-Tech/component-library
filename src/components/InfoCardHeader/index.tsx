@@ -10,7 +10,7 @@ type Props = {
 
 export const InfoCardHeader = ({ icon, headerInfo, headerDetail, ...props }: Props) => {
   return (
-    <div className={cls(css['header-container'], props.className)} {...props}>
+    <div {...props} className={cls(css['header-container'], props.className)}>
       <div className={css.icn}>{icon}</div>
       <div className={css['header-details']}>
         <div>{headerInfo}</div>
