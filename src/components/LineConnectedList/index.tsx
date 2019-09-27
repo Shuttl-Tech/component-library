@@ -1,7 +1,9 @@
 import React from 'react';
-import CircleIcon from '@material-ui/icons/PanoramaFishEye';
-import FilledCircleIcon from '@material-ui/icons/Lens';
+// import CircleIcon from '@material-ui/icons/PanoramaFishEye';
+// import FilledCircleIcon from '@material-ui/icons/AccessAlarmsSharp';
+import Button from '@material-ui/core/Button';
 
+// @ts-ignore
 const items = [
   {
     iconStyle: 'default',
@@ -19,36 +21,16 @@ const items = [
 
 export const LineConnectedList = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      {items.map((item, index) => {
-        return (
-          <div key={index}>
-            <div className={'step'} style={{ display: 'block' }}>
-              <span className={'label'} style={{ display: 'flex', alignItems: 'center' }}>
-                <span className={'iconContainer'} style={{ display: 'flex', flexShrink: 0, paddingRight: 8 }}>
-                  {item.iconStyle === 'filled' ? <FilledCircleIcon /> : <CircleIcon />}
-                </span>
-                <span className={'labelContainer'} style={{ width: '100%' }}>
-                  {item.label}
-                </span>
-              </span>
-            </div>
-            {index <= items.length - 2 && (
-              <div style={{ margin: '-2px 0 -2px 10px' }}>
-                <span
-                  style={{
-                    minHeight: 28,
-                    borderLeftStyle: 'solid',
-                    borderLeftWidth: 1,
-                    display: 'block',
-                    borderColor: '#bdbdbd',
-                  }}
-                ></span>
-              </div>
-            )}
-          </div>
-        );
-      })}
+    <div>
+      <div className={'step'} style={{ display: 'block' }}>
+        <span className={'label'} style={{ display: 'flex', alignItems: 'center' }}>
+          <span className={'iconContainer'} style={{ display: 'flex', flexShrink: 0, paddingRight: 8 }}>
+            {/*{item.iconStyle === 'filled' ? <FilledCircleIcon /> : <CircleIcon />}*/}
+            {/*<FilledCircleIcon />*/}
+            <Button>LOL</Button>
+          </span>
+        </span>
+      </div>
     </div>
   );
 };

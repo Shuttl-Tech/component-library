@@ -1,6 +1,6 @@
 {
-  "name": "component-library",
-  "version": "1.0.0",
+  "name": "shuttl-ui-library",
+  "version": "0.0.1",
   "description": "Shuttl Frontend Component Library",
   "author": "jayantbh",
   "license": "MIT",
@@ -26,11 +26,12 @@
     "check-format": "prettier --check \"{src,example,.storybook}/**/*.{ts,tsx,js,scss}\""
   },
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.4.3",
+    "@material-ui/pickers": "^3.0.0",
     "@types/classnames": "^2.2.9",
     "classnames": "^2.2.6",
-    "@material-ui/core": "^4.2.0",
-    "@material-ui/icons": "^4.0.0",
-    "@material-ui/pickers": "^3.0.0"
+    "rollup-plugin-auto-external": "^2.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",

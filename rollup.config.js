@@ -27,16 +27,6 @@ const plugins = [
   commonjs({
     namedExports: {
       'react-is': ['ForwardRef'],
-      'node_modules/@material-ui/core/styles/index.js': [
-        'createGenerateClassName',
-        'createMuiTheme',
-        'createStyles',
-        'jssPreset',
-        'MuiThemeProvider',
-        'withStyles',
-        'withTheme',
-      ],
-      'node_modules/@material-ui/core/Modal/index.js': ['ModalManager'],
     },
   }),
   multiEntry(),
@@ -72,12 +62,20 @@ export default [
         format: 'cjs',
         exports: 'named',
         sourcemap: true,
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
       },
       {
         file: pkg.module,
         format: 'es',
         exports: 'named',
         sourcemap: true,
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
       },
     ],
     plugins,
