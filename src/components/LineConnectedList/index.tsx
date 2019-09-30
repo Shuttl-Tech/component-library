@@ -43,7 +43,7 @@ export const LineConnectedList = () => {
                     display: 'block',
                     borderColor: '#bdbdbd',
                   }}
-                ></span>
+                />
               </div>
             )}
           </div>
