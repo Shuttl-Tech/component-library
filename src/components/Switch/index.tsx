@@ -1,6 +1,6 @@
 import React from 'react';
 import cls from 'classnames';
-import css from './styles.module.scss'
+import css from './styles.module.scss';
 
 export type SwitchOptions = [string, string];
 
@@ -18,9 +18,15 @@ export const Switch = ({ options, value, onChange, ...props }: Props) => {
     <div {...props} className={cls(css.switchBox, props.className)}>
       {options.map((option, index) => {
         return (
-          <div key={index} className={cls(css.element, index === selectedIndex && css.selected)} onClick={() => onChange(option)}>{option}</div>
-        )
+          <div
+            key={index}
+            className={cls(css.element, index === selectedIndex && css.selected)}
+            onClick={() => onChange(option)}
+          >
+            {option}
+          </div>
+        );
       })}
     </div>
-  )
+  );
 };
