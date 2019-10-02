@@ -5,4 +5,4 @@ export default {
   title: 'ProgressBar',
 };
 
-export const text = () => <ProgressBar/>;
+export const text = () => <ProgressBar />;

@@ -1,6 +1,6 @@
 import { createMuiTheme, Theme } from '@material-ui/core/styles';
 
-const shuttlCyan = {
+export const shuttlCyan = {
   300: '#00dae6',
   500: '#00adb7',
   700: '#009199',

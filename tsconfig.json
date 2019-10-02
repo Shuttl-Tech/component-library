@@ -23,6 +23,9 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "awesomeTypescriptLoaderOptions": {
+    "ignoreDiagnostics": [7005, 6133]
+  },
+  "include": ["src/**/*", ".storybook"],
   "exclude": ["node_modules", "build", "scripts", "dist", "example", "rollup.config.js"]
 }
