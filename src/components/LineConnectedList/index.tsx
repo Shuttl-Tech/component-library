@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import cls from 'classnames';
 import CircleIcon from '@material-ui/icons/PanoramaFishEye';
 
 import css from './styles.module.scss';
@@ -11,28 +12,37 @@ export type Item = {
 }
 
 export type Props = {
-  data: Array<Item>
+  data: Array<Item>,
+  classes?: {
+    root?: string,
+    labelWrapper?: string,
+    labelNotConnected?: string,
+    icon?: string,
+    label?: string,
+    connectorRoot?: string,
+    connecterLine?: string
+  }
 }
 
-export const LineConnectedList = ({data}: Props) => {
+export const LineConnectedList = ({data, classes = {}}: Props) => {
   return (
-    <div className={css['connected-list']}>
+    <div className={cls(css['connected-list'], classes.root)}>
       {data.map((item, index) => {
         return (
           <div key={index}>
             <div>
-              <span className={css['label-wrapper']}>
+              <span className={cls(css['label-wrapper'], classes.labelWrapper)}>
                 {item.isConnected ?
                   <>
-                    <span className={css['icon-container']}>
+                    <span className={cls(css['icon-container'], classes.icon)}>
                       {item.icon ? item.icon : <CircleIcon/>}
                     </span>
-                    <span className={css['label-container']}>
+                    <span className={cls(css['label-container'], classes.label)}>
                       {item.content}
                     </span>
                   </>:
                   <>
-                    <span className={css['label-not-connected']}>
+                    <span className={cls(css['label-not-connected'], classes.labelNotConnected)}>
                       {item.content}
                     </span>
                   </>
@@ -40,8 +50,8 @@ export const LineConnectedList = ({data}: Props) => {
               </span>
             </div>
             {index <= data.length - 2 && (
-              <div className={css.connector}>
-                <div className={css['connector-line']}/>
+              <div className={cls(css.connector, classes.connectorRoot)}>
+                <div className={cls(css['connector-line'], classes.connecterLine)}/>
               </div>
             )}
           </div>
