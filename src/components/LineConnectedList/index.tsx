@@ -1,49 +1,47 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import CircleIcon from '@material-ui/icons/PanoramaFishEye';
-import FilledCircleIcon from '@material-ui/icons/Lens';
 
-const items = [
-  {
-    iconStyle: 'default',
-    label: 'DDA Sports Complex, Sector 10, Dwarka',
-  },
-  {
-    iconStyle: 'filled',
-    label: 'Hyundai Showroom',
-  },
-  {
-    iconStyle: 'default',
-    label: 'Subhash Chowk',
-  },
-];
+import css from './styles.module.scss';
 
-export const LineConnectedList = () => {
+export type Item = {
+  icon?: ReactNode,
+  content: ReactNode,
+  isConnected?: boolean,
+  lineStyle?: 'solid' | 'dashed'
+}
+
+export type Props = {
+  data: Array<Item>
+}
+
+export const LineConnectedList = ({data}: Props) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      {items.map((item, index) => {
+    <div className={css['connected-list']}>
+      {data.map((item, index) => {
         return (
           <div key={index}>
-            <div className={'step'} style={{ display: 'block' }}>
-              <span className={'label'} style={{ display: 'flex', alignItems: 'center' }}>
-                <span className={'iconContainer'} style={{ display: 'flex', flexShrink: 0, paddingRight: 8 }}>
-                  {item.iconStyle === 'filled' ? <FilledCircleIcon /> : <CircleIcon />}
-                </span>
-                <span className={'labelContainer'} style={{ width: '100%' }}>
-                  {item.label}
-                </span>
+            <div>
+              <span className={css['label-wrapper']}>
+                {item.isConnected ?
+                  <>
+                    <span className={css['icon-container']}>
+                      {item.icon ? item.icon : <CircleIcon/>}
+                    </span>
+                    <span className={css['label-container']}>
+                      {item.content}
+                    </span>
+                  </>:
+                  <>
+                    <span className={css['label-not-connected']}>
+                      {item.content}
+                    </span>
+                  </>
+                }
               </span>
             </div>
-            {index <= items.length - 2 && (
-              <div style={{ margin: '-2px 0 -2px 10px' }}>
-                <span
-                  style={{
-                    minHeight: 28,
-                    borderLeftStyle: 'solid',
-                    borderLeftWidth: 1,
-                    display: 'block',
-                    borderColor: '#bdbdbd',
-                  }}
-                />
+            {index <= data.length - 2 && (
+              <div className={css.connector}>
+                <div className={css['connector-line']}/>
               </div>
             )}
           </div>
