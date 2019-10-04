@@ -11,7 +11,8 @@ const ListItems = [
   {
     icon: <CircleIcon/>,
     content: 'DDA Sports Complex, Sector 10, Dwarka',
-    isConnected: true
+    isConnected: true,
+    lineStyle: "dashed"
   },
   {
     content: 'Spaze ITech Park',
@@ -34,4 +35,4 @@ const ListItems = [
 ];
 
 
-export const text = () => <LineConnectedList data={ListItems}/>;
+export const text = () => <LineConnectedList items={ListItems}/>;

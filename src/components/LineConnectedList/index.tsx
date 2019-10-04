@@ -8,11 +8,11 @@ export type Item = {
   icon?: ReactNode,
   content: ReactNode,
   isConnected?: boolean,
-  lineStyle?: 'solid' | 'dashed'
+  lineStyle?: string
 }
 
 export type Props = {
-  data: Array<Item>,
+  items: Array<Item>,
   classes?: {
     root?: string,
     labelWrapper?: string,
@@ -24,10 +24,11 @@ export type Props = {
   }
 }
 
-export const LineConnectedList = ({data, classes = {}}: Props) => {
+export const LineConnectedList = ({items, classes = {}}: Props) => {
   return (
     <div className={cls(css['connected-list'], classes.root)}>
-      {data.map((item, index) => {
+      {items.map((item, index) => {
+        const isLastItem = index == items.length - 1;
         return (
           <div key={index}>
             <div>
@@ -42,16 +43,16 @@ export const LineConnectedList = ({data, classes = {}}: Props) => {
                     </span>
                   </>:
                   <>
-                    <span className={cls(css['label-not-connected'], classes.labelNotConnected)}>
+                    <span className={cls(css['label-not-connected'], classes.labelNotConnected, css['border-left-dashed'])}>
                       {item.content}
                     </span>
                   </>
                 }
               </span>
             </div>
-            {index <= data.length - 2 && (
+            {!isLastItem && (
               <div className={cls(css.connector, classes.connectorRoot)}>
-                <div className={cls(css['connector-line'], classes.connecterLine)}/>
+                <div className={cls(css['connector-line'], classes.connecterLine, css['border-left-dashed'])}/>
               </div>
             )}
           </div>
