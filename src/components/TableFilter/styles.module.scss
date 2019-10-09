@@ -16,57 +16,58 @@
 @import 'globals/mixins';
 
 .head-filter {
-	@include centered;
-	transform: scale(0.7);
-	height: $grid-base * 7;
-	width: $grid-base * 7;
-	position: relative;
-	right: -$grid-base;
-	margin-left: $grid-base-3x;
+  @include centered;
+  transform: scale(0.7);
+  height: $grid-base * 7;
+  width: $grid-base * 7;
+  position: relative;
+  right: -$grid-base;
+  margin-left: $grid-base-3x;
 }
 
 .head-filter-target {
-	position: relative;
+  position: relative;
 }
 
 .filter-count {
-	@include centered;
-	@include circle($grid-base-4x);
-	line-height: 1em;
-	background: $cyan-standard;
-	color: white;
-	font-size: $font-standard;
-	position: absolute;
-	top: -19px;
-	left: 47px;
-	z-index: 1;
+  @include centered;
+  @include circle($grid-base-4x);
+  line-height: 1em;
+  background: $cyan-standard;
+  color: white;
+  font-size: $font-standard;
+  position: absolute;
+  top: -19px;
+  left: 47px;
+  z-index: 1;
 }
 
 .filter-icon {
-	position: absolute;
-	top: 1px;
-	right: 10px;
+  position: absolute;
+  top: 1px;
+  right: 10px;
 }
 
 div.filter-select {
-	border: 1px solid $cyan-standard;
-	border-radius: $grid-base;
-	transition: background-color $animation-standard;
-	&:hover {
-		background-color: rgba(0, 0, 0, 0.2);
-	}
+  border: 1px solid $cyan-standard;
+  border-radius: $grid-base;
+  transition: background-color $animation-standard;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 
-	&:before, &:after {
-		display: none;
-	}
+  &:before,
+  &:after {
+    display: none;
+  }
 }
 
 div.select-internal {
-	overflow: unset;
-	padding: 12px 40px 16px 0;
-	height: 0;
+  overflow: unset;
+  padding: 12px 40px 16px 0;
+  height: 0;
 }
 
 div.select-root {
-	width: 54px;
+  width: 54px;
 }

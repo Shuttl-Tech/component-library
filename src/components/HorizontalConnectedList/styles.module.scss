@@ -1,0 +1,46 @@
+.list {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  h1,h2,h3,h4,h5,p{
+    margin:0;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.connector {
+  height: 1px;
+  flex-grow: 1;
+}
+
+.border-solid {
+  border-top: 1px solid #ccc;
+}
+
+.border-dashed {
+  border-top: 1px dashed #ccc;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.content{
+  padding: 12px;
+  text-align:center;
+}
