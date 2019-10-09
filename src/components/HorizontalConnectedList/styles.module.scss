@@ -3,8 +3,13 @@
   justify-content: space-around;
   align-items: baseline;
 
-  h1,h2,h3,h4,h5,p{
-    margin:0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 0;
   }
 }
 
@@ -40,7 +45,7 @@
   visibility: hidden;
 }
 
-.content{
+.content {
   padding: 12px;
-  text-align:center;
+  text-align: center;
 }
