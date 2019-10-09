@@ -1,0 +1,42 @@
+@import 'globals/variables';
+
+.connected-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.label-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.icon-container{
+  display: flex;
+  flex-shrink: 0;
+  padding-right: $grid-base-2x;
+}
+
+.label-container{
+  width: 100%;
+  color: $gray-black;
+}
+
+.connector{
+  margin: -2px 0 -2px 10px;
+}
+
+.connector-line{
+  min-height: $grid-base-5x;
+  border-left: 1px solid $greyscale-standard;
+}
+
+.label-not-connected{
+  border-left: 1px solid $greyscale-standard;
+  margin-left: 10px;
+  padding-left: $grid-base-5x;
+  color: $greyscale-dark-1;
+}
+
+.border-left-dashed{
+  border-left-style: dashed;
+}

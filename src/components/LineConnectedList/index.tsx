@@ -1,49 +1,58 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import cls from 'classnames';
 import CircleIcon from '@material-ui/icons/PanoramaFishEye';
-import FilledCircleIcon from '@material-ui/icons/Lens';
 
-const items = [
-  {
-    iconStyle: 'default',
-    label: 'DDA Sports Complex, Sector 10, Dwarka',
-  },
-  {
-    iconStyle: 'filled',
-    label: 'Hyundai Showroom',
-  },
-  {
-    iconStyle: 'default',
-    label: 'Subhash Chowk',
-  },
-];
+import css from './styles.module.scss';
 
-export const LineConnectedList = () => {
+export type Item = {
+  icon?: ReactNode,
+  content: ReactNode,
+  isConnected?: boolean,
+  lineStyle?: string
+}
+
+export type Props = {
+  items: Array<Item>,
+  classes?: {
+    root?: string,
+    labelWrapper?: string,
+    labelNotConnected?: string,
+    icon?: string,
+    label?: string,
+    connectorRoot?: string,
+    connecterLine?: string
+  }
+}
+
+export const LineConnectedList = ({items, classes = {}}: Props) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div className={cls(css['connected-list'], classes.root)}>
       {items.map((item, index) => {
+        const isLastItem = index == items.length - 1;
         return (
           <div key={index}>
-            <div className={'step'} style={{ display: 'block' }}>
-              <span className={'label'} style={{ display: 'flex', alignItems: 'center' }}>
-                <span className={'iconContainer'} style={{ display: 'flex', flexShrink: 0, paddingRight: 8 }}>
-                  {item.iconStyle === 'filled' ? <FilledCircleIcon /> : <CircleIcon />}
-                </span>
-                <span className={'labelContainer'} style={{ width: '100%' }}>
-                  {item.label}
-                </span>
+            <div>
+              <span className={cls(css['label-wrapper'], classes.labelWrapper)}>
+                {item.isConnected ?
+                  <>
+                    <span className={cls(css['icon-container'], classes.icon)}>
+                      {item.icon ? item.icon : <CircleIcon/>}
+                    </span>
+                    <span className={cls(css['label-container'], classes.label)}>
+                      {item.content}
+                    </span>
+                  </>:
+                  <>
+                    <span className={cls(css['label-not-connected'], classes.labelNotConnected, css['border-left-dashed'])}>
+                      {item.content}
+                    </span>
+                  </>
+                }
               </span>
             </div>
-            {index <= items.length - 2 && (
-              <div style={{ margin: '-2px 0 -2px 10px' }}>
-                <span
-                  style={{
-                    minHeight: 28,
-                    borderLeftStyle: 'solid',
-                    borderLeftWidth: 1,
-                    display: 'block',
-                    borderColor: '#bdbdbd',
-                  }}
-                />
+            {!isLastItem && (
+              <div className={cls(css.connector, classes.connectorRoot)}>
+                <div className={cls(css['connector-line'], classes.connecterLine, css['border-left-dashed'])}/>
               </div>
             )}
           </div>
