@@ -6,7 +6,7 @@ export type Item = {
   icon: ReactNode;
   content?: ReactNode;
   id: string;
-  borderStyle: string;
+  borderStyle?: string;
 };
 
 const Item = ({
@@ -68,6 +68,7 @@ export const HorizontalConnectedList = ({ items, classes = {}, ...props }: Props
   return (
     <div className={cls(css.list, classes.list)} {...props}>
       {items.map((item, index) => {
+        const leftConnectorBorder = index > 0 ? items[index - 1].borderStyle || 'solid' : item.borderStyle || 'solid';
         return (
           <Item
             key={item.id}
@@ -75,8 +76,8 @@ export const HorizontalConnectedList = ({ items, classes = {}, ...props }: Props
             classes={classes}
             showLeftConnector={index !== 0}
             showRightConnector={index !== items.length - 1}
-            leftConnectorBorder={index > 0 ? items[index - 1].borderStyle : item.borderStyle}
-            rightConnectorBorder={item.borderStyle}
+            leftConnectorBorder={leftConnectorBorder}
+            rightConnectorBorder={item.borderStyle || 'solid'}
           />
         );
       })}
