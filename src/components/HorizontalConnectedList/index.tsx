@@ -5,6 +5,7 @@ import css from './styles.module.scss';
 export type Item = {
   icon: ReactNode;
   content?: ReactNode;
+  contentSecondary?: ReactNode;
   id: string;
   borderStyle?: string;
 };
@@ -27,7 +28,6 @@ const Item = ({
     listItem?: string;
     icon?: string;
     connector?: string;
-    content?: string;
   };
 }) => {
   return (
@@ -51,7 +51,6 @@ const Item = ({
           )}
         />
       </div>
-      <div className={cls(css.content, classes.content)}>{item.content}</div>
     </div>
   );
 };
@@ -61,26 +60,41 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   classes?: {
     list?: string;
     listItem?: string;
+    steps?: string;
+    content?: string;
+    contentSecondary?: string;
   };
 };
 
 export const HorizontalConnectedList = ({ items, classes = {}, ...props }: Props) => {
   return (
     <div className={cls(css.list, classes.list)} {...props}>
-      {items.map((item, index) => {
-        const leftConnectorBorder = index > 0 ? items[index - 1].borderStyle || 'solid' : item.borderStyle || 'solid';
-        return (
-          <Item
-            key={item.id}
-            item={item}
-            classes={classes}
-            showLeftConnector={index !== 0}
-            showRightConnector={index !== items.length - 1}
-            leftConnectorBorder={leftConnectorBorder}
-            rightConnectorBorder={item.borderStyle || 'solid'}
-          />
-        );
-      })}
+      <div className={cls(css['content-secondary'], classes.contentSecondary)}>
+        {items.map((item, i) => (
+          <div key={i}>{item.contentSecondary}</div>
+        ))}
+      </div>
+      <div className={cls(css.steps, classes.steps)}>
+        {items.map((item, index) => {
+          const leftConnectorBorder = index > 0 ? items[index - 1].borderStyle || 'solid' : item.borderStyle || 'solid';
+          return (
+            <Item
+              key={item.id}
+              item={item}
+              classes={classes}
+              showLeftConnector={index !== 0}
+              showRightConnector={index !== items.length - 1}
+              leftConnectorBorder={leftConnectorBorder}
+              rightConnectorBorder={item.borderStyle || 'solid'}
+            />
+          );
+        })}
+      </div>
+      <div className={cls(css.content, classes.content)}>
+        {items.map((item, i) => (
+          <div key={i}>{item.content}</div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,23 +1,16 @@
+@import 'globals/variables';
+
 .list {
   display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  p {
-    margin: 0;
-  }
+  flex-direction: column;
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  flex: 1;
   align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 .icon {
@@ -45,7 +38,24 @@
   visibility: hidden;
 }
 
-.content {
-  padding: 12px;
+.content,
+.content-secondary {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+
+  > div {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: $grid-base-3x;
+  }
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
