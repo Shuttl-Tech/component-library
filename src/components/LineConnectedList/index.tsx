@@ -28,7 +28,7 @@ export const LineConnectedList = ({items, classes = {}}: Props) => {
   return (
     <div className={cls(css['connected-list'], classes.root)}>
       {items.map((item, index) => {
-        const isLastItem = index == items.length - 1;
+        const isLastItem = index === items.length - 1;
         return (
           <div key={index}>
             <div>
